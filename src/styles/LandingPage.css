@@ -1,0 +1,9 @@
+@media screen and (max-width: 430px) {
+  .HeroBannerDesktop_Parentdiv {
+    margin-top: 3rem;
+  }
+}
+
+.HeroBannerDesktop_Parentdiv {
+  margin-top: 4rem;
+}

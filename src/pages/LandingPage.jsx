@@ -1,11 +1,12 @@
 import React from 'react'
 import HeroBannerDeskop from '../components/HeroBannerDeskop'
+import "../styles/LandingPage.css"
 
 const LandingPage = () => {
     return (
         <>
 
-            <div style={{ marginTop: "6rem  " }}>
+            <div className='HeroBannerDesktop_Parentdiv'>
                 <HeroBannerDeskop />
             </div>
         </>
