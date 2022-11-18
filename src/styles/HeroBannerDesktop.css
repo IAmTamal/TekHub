@@ -67,6 +67,7 @@
 @media screen and (max-width: 430px) {
   .hero_subparent1 {
     padding-bottom: 4rem;
+    max-width: 100vw !important;
   }
   .heroright_img {
     display: none;
@@ -88,7 +89,7 @@
   }
 
   .heroleftdiv_p2 {
-    margin-bottom: 0px !important;
-    line-height: 70px;
+    margin-bottom: 1rem !important;
+    line-height: 106%;
   }
 }
