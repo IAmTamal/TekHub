@@ -1,7 +1,9 @@
 import React from 'react'
-import { ReactComponent as HeyBanner } from '../assets/heydesktop.svg';
 import { ReactComponent as HeyBannerMobile } from '../assets/heymobile.svg';
+import { ReactComponent as HeyBannerDesktop } from '../assets/heydesktop.svg';
+// import { ReactComponent as HeyBanner } from '../assets/heydesktop.png';
 import "../styles/HeroBannerDesktop.css"
+
 
 
 const HeroBannerDeskop = () => {
@@ -15,16 +17,18 @@ const HeroBannerDeskop = () => {
                             <p className='heroleftdiv_p1'>Social is POWER</p>
                             <p className='heroleftdiv_p2'>Join us on our Journey !</p>
 
-                            <HeyBannerMobile className="heroright_img_mobile" />
+                            <HeyBannerDesktop className="heroright_img_mobile" />
 
 
                             <p className='heroleftdiv_p3'>To help you connect with other amazing developers, products, content and community around the globe !</p>
                             <button className='heroleftdiv_button'>Get started now</button>
                         </div>
-                        <HeyBanner className="heroright_img" />
+                        <HeyBannerMobile className="heroright_img" />
                     </div>
                 </div>
             </div>
+
+
 
         </>
     )
