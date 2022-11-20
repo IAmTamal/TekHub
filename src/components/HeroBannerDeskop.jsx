@@ -23,7 +23,7 @@ const HeroBannerDeskop = () => {
                             <p className='heroleftdiv_p3'>To help you connect with other amazing developers, products, content and community around the globe !</p>
                             <button className='heroleftdiv_button'>Get started now</button>
                         </div>
-                        <HeyBannerMobile className="heroright_img" />
+                        <HeyBannerDesktop className="heroright_img" />
                     </div>
                 </div>
             </div>

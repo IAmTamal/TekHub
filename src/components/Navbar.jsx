@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../styles/Navbar.css"
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -10,13 +11,17 @@ const Navbar = () => {
 
             <div className=" container navbar_main_parent" >
                 <div className='navbar_subparent'>
-                    <p className='navbar_brand'>FellowCoders</p>
+
+                    <Link to='/' className='navbar_brand'>FellowCoders</Link>
 
                     <div className="navbar_linksdiv">
 
-                        <p>Home</p>
-                        <p>About</p>
-                        <p>Contact</p>
+                        <Link to='/' className='navbar_links'>Home</Link>
+                        <Link to='/about' className='navbar_links'>About</Link>
+                        <Link to='/contact' className='navbar_links'>Contact</Link>
+
+
+
 
                     </div>
 
