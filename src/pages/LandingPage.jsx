@@ -1,4 +1,5 @@
 import React from 'react'
+import CommunityBanner from '../components/CommunityBanner'
 import HeroBannerDeskop from '../components/HeroBannerDeskop'
 import "../styles/LandingPage.css"
 
@@ -8,6 +9,10 @@ const LandingPage = () => {
 
             <div className='HeroBannerDesktop_Parentdiv'>
                 <HeroBannerDeskop />
+
+
+
+                <CommunityBanner />
             </div>
         </>
     )

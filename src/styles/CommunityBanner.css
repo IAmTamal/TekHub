@@ -1,0 +1,43 @@
+.cb_main_parent {
+  margin-top: 10rem;
+}
+
+.cb_heading_div_p1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  width: 60%;
+
+  line-height: 95px;
+  margin-bottom: 1.5rem !important;
+
+  color: #7353d4;
+  background-image: -webkit-linear-gradient(
+    0deg,
+    #7353d4 13%,
+    #d78bf7 50%,
+    #0f31ab 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.cb_heading_div1 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.leftwing {
+  position: absolute;
+  left: 120px;
+  margin-bottom: 100px;
+}
+
+.rightwing {
+  position: absolute;
+  right: 120px;
+  margin-bottom: 100px;
+}
