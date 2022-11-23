@@ -4,12 +4,17 @@ import { ReactComponent as LeftWing } from '../assets/leftwing.svg';
 import { ReactComponent as RightWing } from '../assets/rightwing.svg';
 import CarouselItem from './CarouselItem';
 import Carousel from "react-elastic-carousel";
+import { ReactComponent as HeyBannerMobile } from '../assets/heymobile.svg';
+import { ReactComponent as HeyBannerDesktop } from '../assets/heydesktop.svg';
+import { ReactComponent as EddieFeat } from '../assets/EddieHub_feat.svg';
+import { ReactComponent as FourCFeat } from '../assets/4c_feat.svg';
+import { ReactComponent as WmdFeat } from '../assets/wmd_feat.svg';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 550, itemsToShow: 2 },
-    { width: 768, itemsToShow: 3 },
-    { width: 1200, itemsToShow: 4 },
+    { width: 550, itemsToShow: 1 },
+    { width: 768, itemsToShow: 1 },
+    { width: 1200, itemsToShow: 1 },
 ];
 
 
@@ -51,7 +56,7 @@ const CommunityBannerDesktop = () => {
     }, []);
     return (
         <>
-            <div className="container">
+            {/* <div className="container">
                 <div className="cb_main_parent">
                     <div className="cb_heading_div">
 
@@ -62,72 +67,55 @@ const CommunityBannerDesktop = () => {
                             <RightWing className='rightwing' />
                         </div>
 
+
+
+
+                    </div>
+                </div>
+            </div> */}
+
+            <div className=" container cb_main_parent">
+
+                <div className="cb_subparent1">
+
+                    <div className="cb_leftdiv">
+
                         <Carousel
 
                             ref={carouselRef}
                             breakPoints={breakPoints}
                             // enableAutoPlay
-                            // enableAutoPlay={autoPlay}
+                            enableAutoPlay={autoPlay}
                             isRTL={false}
-                            showButton={true}
-                            showArrows={true}
+                            showButton={false}
+                            showArrows={false}
                             pagination={false}
                             autoPlaySpeed={2000}
                             onNextEnd={handleEnd}
                         >
-                            <CarouselItem
-                                phot="https://i.ibb.co/ZLkD8qr/6.png"
-                                name="DaD codes T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/LZX0F8G/7.png"
-                                name="Google-It T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/drVKMRK/1.png"
-                                name="Developer T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/Kb3vpLB/2.png"
-                                name="ESCR T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/JmJ0JCL/3.png"
-                                name="Python T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/LPkPf5j/4.png"
-                                name="Black Linux T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/0sHTS8d/5.png"
-                                name="Sudo T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
-                            <CarouselItem
-                                phot="https://i.ibb.co/ZLkD8qr/6.png"
-                                name="Red Linux T-shirt"
-                                price="$ 35"
-                                link="https://shopcoders.com/product/red-linux-t-shirt/"
-                            />
+                            <EddieFeat className="Feat_img" />
+                            <FourCFeat className="Feat_img" />
+                            <WmdFeat className="Feat_img" />
+
+
+
 
                         </Carousel>
-
-
                     </div>
+
+                    <div className="cb_rightdiv">
+
+                        <p className='cb_rightdiv_p1'>Communities are fun !</p>
+
+
+
+
+                        <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
+                            <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p>
+                        </div>
+                        <button className='cb_rightdiv_btn'>Explore</button>
+                    </div>
+
                 </div>
             </div>
 
