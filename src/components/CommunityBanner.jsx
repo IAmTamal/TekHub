@@ -1,11 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
-import "../styles/CommunityBanner.css"
-import { ReactComponent as LeftWing } from '../assets/leftwing.svg';
-import { ReactComponent as RightWing } from '../assets/rightwing.svg';
-import CarouselItem from './CarouselItem';
+import "../styles/CommunityBanner.css";
 import Carousel from "react-elastic-carousel";
-import { ReactComponent as HeyBannerMobile } from '../assets/heymobile.svg';
-import { ReactComponent as HeyBannerDesktop } from '../assets/heydesktop.svg';
 import { ReactComponent as EddieFeat } from '../assets/EddieHub_feat.svg';
 import { ReactComponent as FourCFeat } from '../assets/4c_feat.svg';
 import { ReactComponent as WmdFeat } from '../assets/wmd_feat.svg';
@@ -23,9 +18,6 @@ const CommunityBannerDesktop = () => {
 
     const carouselRef = useRef(null);
     const [autoPlay, setAutoPlay] = useState(true);
-
-    const [win, setwin] = useState();
-    const [creds, setcreds] = useState({ email: "" });
     let resetTimeout;
 
     const handleMouse1 = () => {
@@ -48,31 +40,9 @@ const CommunityBannerDesktop = () => {
         }, 2500);
     };
 
-
-    useEffect(() => {
-        // window is accessible here.
-
-        setwin(window.innerHeight);
-    }, []);
     return (
         <>
-            {/* <div className="container">
-                <div className="cb_main_parent">
-                    <div className="cb_heading_div">
 
-                        <div className="cb_heading_div1">
-                            <LeftWing className='leftwing' />
-                            <p className='cb_heading_div_p1'>Communities give you wings !</p>
-
-                            <RightWing className='rightwing' />
-                        </div>
-
-
-
-
-                    </div>
-                </div>
-            </div> */}
 
             <div className=" container cb_main_parent">
 
