@@ -17,7 +17,7 @@ const HeroBannerDeskop = () => {
                             <p className='heroleftdiv_p1'>Social is POWER</p>
                             <p className='heroleftdiv_p2'>Join us on our Journey !</p>
 
-                            <HeyBannerDesktop className="heroright_img_mobile" />
+
 
 
                             <p className='heroleftdiv_p3'>To help you connect with other amazing developers, products, content and community </p>

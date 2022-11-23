@@ -3,10 +3,6 @@
   margin-bottom: 5rem;
 }
 
-.heroright_img {
-  width: 45%;
-}
-
 .cb_subparent1 {
   display: flex;
   justify-content: space-between;
@@ -70,4 +66,23 @@
   height: 100%;
   border-radius: 10px;
   margin-right: 10px;
+}
+
+@media screen and (max-width: 430px) {
+  .cb_main_parent {
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+  .cb_subparent1 {
+    flex-direction: column;
+  }
+
+  .cb_leftdiv {
+    width: 95vw;
+    max-width: 95vw;
+  }
+
+  .Feat_img {
+    margin: 0px;
+  }
 }

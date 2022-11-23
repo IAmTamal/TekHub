@@ -55,7 +55,7 @@ const CommunityBannerDesktop = () => {
                             ref={carouselRef}
                             breakPoints={breakPoints}
                             // enableAutoPlay
-                            enableAutoPlay={autoPlay}
+                            // enableAutoPlay={autoPlay}
                             isRTL={false}
                             showButton={false}
                             showArrows={false}
