@@ -44,10 +44,11 @@ const CommunityBannerDesktop = () => {
         <>
 
 
+
+
+
             <div className=" container cb_main_parent">
-
                 <div className="cb_subparent1">
-
                     <div className="cb_leftdiv">
 
                         <Carousel
@@ -55,13 +56,14 @@ const CommunityBannerDesktop = () => {
                             ref={carouselRef}
                             breakPoints={breakPoints}
                             // enableAutoPlay
-                            // enableAutoPlay={autoPlay}
+                            enableAutoPlay={autoPlay}
                             isRTL={false}
                             showButton={false}
                             showArrows={false}
                             pagination={false}
                             autoPlaySpeed={2000}
                             onNextEnd={handleEnd}
+
                         >
                             <EddieFeat className="Feat_img" />
                             <FourCFeat className="Feat_img" />
@@ -71,21 +73,20 @@ const CommunityBannerDesktop = () => {
 
 
                         </Carousel>
+
                     </div>
 
                     <div className="cb_rightdiv">
-
                         <p className='cb_rightdiv_p1'>Communities are fun !</p>
 
-
-
+                        {/* <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p> */}
 
                         <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
                             <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p>
                         </div>
-                        <button className='cb_rightdiv_btn'>Explore</button>
-                    </div>
 
+                        <button className='cb_rightdiv_btn'>See more communities</button>
+                    </div>
                 </div>
             </div>
 

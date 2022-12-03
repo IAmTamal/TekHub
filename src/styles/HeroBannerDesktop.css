@@ -1,5 +1,5 @@
 .heroright_img {
-  width: 45%;
+  width: 40%;
 }
 
 .hero_subparent1 {
@@ -25,31 +25,12 @@
   font-size: 0.7rem;
   letter-spacing: 2px;
 }
-.heroleftdiv_p2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 4.5rem;
-  max-width: 550px;
-  line-height: 95px;
-  margin-bottom: 1.5rem !important;
-
-  color: #7353d4;
-  background-image: -webkit-linear-gradient(
-    0deg,
-    #7353d4 13%,
-    #d78bf7 50%,
-    #0f31ab 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
-}
 
 .heroleftdiv_p3 {
   font-family: "Poppins", sans-serif;
   max-width: 430px !important;
   color: black;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.8;
   font-weight: 600;
   letter-spacing: 1px;
@@ -67,6 +48,20 @@
   color: black;
   font-weight: 600;
   cursor: pointer;
+}
+
+.heroleftdiv_p2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  max-width: 550px;
+  line-height: 70px;
+  margin-bottom: 1.5rem !important;
+
+  color: #7353d4;
+}
+
+.heroleftdiv_p3 {
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 430px) {
@@ -92,9 +87,17 @@
   .heroleftdiv_p1 {
     display: none;
   }
-
   .heroleftdiv_p2 {
-    margin-bottom: 1rem !important;
-    line-height: 106%;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    max-width: 550px;
+    line-height: 50px;
+    margin-bottom: 1.5rem !important;
+
+    color: #7353d4;
+  }
+
+  .heroleftdiv_p3 {
+    font-size: 1rem;
   }
 }

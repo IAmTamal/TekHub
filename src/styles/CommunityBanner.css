@@ -1,11 +1,11 @@
 .cb_main_parent {
-  margin-top: 8rem;
-  margin-bottom: 5rem;
+  margin-top: 3rem;
 }
 
 .cb_subparent1 {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .cb_leftdiv {
@@ -17,35 +17,25 @@
   text-align: right;
   width: 60%;
 }
-
 .cb_rightdiv_p1 {
   font-family: "Montserrat", sans-serif;
-  font-size: 4.5rem;
-  /* max-width: 600px; */
-  line-height: 95px;
+  font-size: 3.5rem;
+
+  line-height: 70px;
   margin-bottom: 1.5rem !important;
 
   color: #7353d4;
-  background-image: -webkit-linear-gradient(
-    0deg,
-    #7353d4 13%,
-    #d78bf7 50%,
-    #0f31ab 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  text-fill-color: transparent;
-  -webkit-text-fill-color: transparent;
 }
 
 .cb_rightdiv_p2 {
   font-family: "Poppins", sans-serif;
-  color: black;
   width: 80%;
-  font-size: 1.1rem;
+  color: black;
+  font-size: 1rem;
   line-height: 1.8;
   font-weight: 600;
   letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
 .cb_rightdiv_btn {
@@ -59,30 +49,49 @@
   color: black;
   font-weight: 600;
   cursor: pointer;
-}
-
-.Feat_img {
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  margin-right: 10px;
+  width: auto;
+  margin: auto;
 }
 
 @media screen and (max-width: 430px) {
   .cb_main_parent {
-    margin-top: 3rem;
-    margin-bottom: 5rem;
+    margin-top: 0rem;
   }
+
   .cb_subparent1 {
-    flex-direction: column;
+    display: block;
   }
 
   .cb_leftdiv {
-    width: 95vw;
-    max-width: 95vw;
+    max-width: 99vw;
+    width: auto;
+  }
+  .cb_rightdiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
   }
 
-  .Feat_img {
-    margin: 0px;
+  .cb_rightdiv_p1 {
+    max-width: 430px !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3rem;
+    line-height: 50px;
+    margin-bottom: 1.5rem !important;
+    color: #7353d4;
+    text-overflow: clip;
+  }
+
+  .cb_rightdiv_p2 {
+    width: 100%;
+  }
+
+  .cb_rightdiv_btn {
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    margin: auto;
   }
 }

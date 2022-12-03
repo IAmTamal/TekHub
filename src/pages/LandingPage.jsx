@@ -10,9 +10,11 @@ const LandingPage = () => {
             <div className='HeroBannerDesktop_Parentdiv'>
                 <HeroBannerDeskop />
 
-
-
                 <CommunityBanner />
+
+                <br />
+
+
             </div>
         </>
     )
