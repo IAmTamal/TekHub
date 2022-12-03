@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage'
 import './styles/App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import About from './pages/About'
+import Communities from './pages/Communities'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route exact path="/about" element={<About />} />
+          <Route exact path="/communities" element={<Communities />} />
 
         </Routes>
 

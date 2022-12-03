@@ -1,0 +1,30 @@
+.comm_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.comm_header_p1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  max-width: 550px;
+  line-height: 70px;
+  margin-bottom: 1.5rem !important;
+  color: #7353d4;
+  text-align: center;
+}
+
+.comm_header_p2 {
+  display: block;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-align: center;
+}

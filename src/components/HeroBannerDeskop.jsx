@@ -17,9 +17,6 @@ const HeroBannerDeskop = () => {
                             <p className='heroleftdiv_p1'>Social is POWER</p>
                             <p className='heroleftdiv_p2'>Join us on our Journey !</p>
 
-
-
-
                             <p className='heroleftdiv_p3'>To help you connect with other amazing developers, products, content and community </p>
                             <button className='heroleftdiv_button'>Get started now</button>
                         </div>

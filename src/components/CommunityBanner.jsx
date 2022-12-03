@@ -4,6 +4,7 @@ import Carousel from "react-elastic-carousel";
 import { ReactComponent as EddieFeat } from '../assets/EddieHub_feat.svg';
 import { ReactComponent as FourCFeat } from '../assets/4c_feat.svg';
 import { ReactComponent as WmdFeat } from '../assets/wmd_feat.svg';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -39,6 +40,9 @@ const CommunityBannerDesktop = () => {
             carouselRef?.current?.goTo(0);
         }, 2500);
     };
+
+    const navigate = useNavigate();
+
 
     return (
         <>
@@ -79,13 +83,15 @@ const CommunityBannerDesktop = () => {
                     <div className="cb_rightdiv">
                         <p className='cb_rightdiv_p1'>Communities are fun !</p>
 
-                        {/* <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p> */}
+
 
                         <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
                             <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p>
                         </div>
 
-                        <button className='cb_rightdiv_btn'>See more communities</button>
+                        <button className='cb_rightdiv_btn' onClick={() => {
+                            navigate("/communities")
+                        }}>See more communities</button>
                     </div>
                 </div>
             </div>
