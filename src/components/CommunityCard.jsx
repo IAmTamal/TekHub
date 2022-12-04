@@ -19,10 +19,10 @@ const CommunityCard = ({ comms }) => {
                         <p>{comms.desc}</p>
 
                         <div className="commcard_card_textdiv_socials">
-                            <BsDiscord />
-                            <BsGithub />
-                            <BsTwitter />
-                            <BsYoutube />
+                            <BsDiscord className="card_socials card_socials_discord" />
+                            <BsGithub className="card_socials card_socials_github" />
+                            <BsTwitter className="card_socials card_socials_twitter" />
+                            <BsYoutube className="card_socials card_socials_youtube" />
 
 
                         </div>

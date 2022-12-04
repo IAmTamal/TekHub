@@ -68,3 +68,31 @@
   justify-content: space-between;
   margin-top: 2rem;
 }
+
+@media screen and (max-width: 430px) {
+  .comm_header_p1 {
+    max-width: 95vw;
+    width: 95vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    font-size: 3rem;
+  }
+
+  .comm_addbtndiv {
+    justify-content: center;
+  }
+  .comm_addbtndiv p {
+    display: none;
+  }
+
+  .comm_hr {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .comm_carddiv {
+    justify-content: center;
+  }
+}

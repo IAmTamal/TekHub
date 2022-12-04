@@ -1,6 +1,8 @@
 .commcard_card {
   max-width: 15rem;
+  background: white;
   border-radius: 10px;
+  margin-top: 2rem;
 }
 .commcard_card_imgdiv {
   display: flex;
@@ -14,5 +16,41 @@
 
 .commcard_card_textdiv {
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: rgba(0, 0, 0, 0.92);
+  padding: 0px 10px;
+}
+
+.commcard_card_textdiv h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.card_socials {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.card_socials_discord {
+  color: #5562ea;
+}
+
+.card_socials_twitter {
+  color: #1da1f2;
+}
+
+.card_socials_github {
+  color: #333;
+}
+
+.card_socials_youtube {
+  color: #ff0000;
+}
+
+@media screen and (max-width: 430px) {
+  .commcard_card_textdiv {
+    text-align: center;
+  }
 }
