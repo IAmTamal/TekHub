@@ -28,3 +28,31 @@
   margin-bottom: 10px;
   text-align: center;
 }
+
+.comm_addbtndiv {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  align-items: end;
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.comm_addbtndiv p {
+  margin: 0px;
+}
+
+.comm_addbtndiv button {
+  font-family: "Poppins", sans-serif;
+  margin-top: 1rem;
+  color: black;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
