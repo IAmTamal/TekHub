@@ -2,12 +2,12 @@
   margin-top: 20px;
   border-radius: 12px;
   font-family: "Poppins", sans-serif;
-  background: #a87ff3;
-  box-shadow: 0px 0px 50px -10px rgba(151, 71, 255, 0.08);
+  /* background: #a87ff3; */
+  background: #28282b;
 }
 .navbar_brand {
   margin: 0px;
-  color: black;
+  color: #a87ff3;
   font-size: 1.4rem;
   cursor: pointer;
   font-weight: 600;
@@ -41,7 +41,7 @@
 }
 
 .navbar_links {
-  color: rgba(0, 0, 0, 0.783) !important;
+  color: #a87ff3;
   margin: 0px;
   cursor: pointer;
   text-decoration: none;

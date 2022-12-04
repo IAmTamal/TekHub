@@ -1,0 +1,18 @@
+.commcard_card {
+  max-width: 15rem;
+  border-radius: 10px;
+}
+.commcard_card_imgdiv {
+  display: flex;
+  justify-content: center;
+}
+.commcard_card_imgdiv img {
+  max-width: 15rem;
+  border-radius: 20px !important;
+  padding: 10px;
+}
+
+.commcard_card_textdiv {
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
