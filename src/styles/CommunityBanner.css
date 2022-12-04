@@ -75,7 +75,12 @@
   }
 
   .cb_rightdiv_p1 {
-    max-width: 430px !important;
+    width: 95vw;
+    max-width: 95vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+
     font-family: "Montserrat", sans-serif;
     font-size: 3rem;
     line-height: 50px;

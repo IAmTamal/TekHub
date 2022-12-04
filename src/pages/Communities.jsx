@@ -40,16 +40,16 @@ const Communities = () => {
             <div className="comm_main_parent container">
                 <div className="comm_subparent">
                     <div className="comm_header">
-                        <LeftWing />
+                        {/* <LeftWing /> */}
                         <p className="comm_header_p1">
-                            Communities give you wings
+                            Communities give you wings !
                             <span className="comm_header_p2">
                                 Join some of the best communities from around the world
-                                belonging to various domains !
+                                belonging to various domains.
                             </span>{" "}
                         </p>
 
-                        <RightWing />
+                        {/* <RightWing /> */}
                     </div>
 
                     <div className="comm_addbtndiv">

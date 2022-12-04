@@ -52,11 +52,11 @@
     margin-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: white;
+    background-color: #28282b;
   }
 
   .navbar_subparent {
-    background: #a87ff3;
+    background: #28282b;
     border-radius: 6px;
     padding-top: 10px;
     padding-bottom: 10px;

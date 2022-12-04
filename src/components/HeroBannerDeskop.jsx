@@ -1,4 +1,5 @@
 import React from 'react'
+
 import "../styles/HeroBannerDesktop.css"
 
 
@@ -17,8 +18,8 @@ const HeroBannerDeskop = () => {
                             <p className='heroleftdiv_p3'>To help you connect with other amazing developers, products, content and community </p>
                             <button className='heroleftdiv_button'>Get started now</button>
                         </div>
-
-                        <img src="https://i.ibb.co/jWvwqsK/heydesktop2.png" alt="" />
+                        {/* <HeyBannerDesktop2  /> */}
+                        <img src="https://i.ibb.co/jWvwqsK/heydesktop2.png" alt="" className="heroright_img" />
                     </div>
                 </div>
             </div>
