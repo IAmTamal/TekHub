@@ -18,14 +18,15 @@ const Navbar = () => {
 
                         <Link to='/' className='navbar_links'>Home</Link>
                         <Link to='/about' className='navbar_links'>About</Link>
-                        <Link to='/contact' className='navbar_links'>Contact</Link>
+                        <Link to='/communities' className='navbar_links'>Communities</Link>
+                        <Link to='/projects' className='navbar_links'>Projects</Link>
 
 
 
 
                     </div>
 
-                    <button type='button' className='btn btn-warning navbar_joinus_button'>Join Us</button>
+                    <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button>
                     <GiHamburgerMenu className='navbar_ham' onClick={() => { setshowdropdown(!showdropdown) }} />
 
 
@@ -38,7 +39,7 @@ const Navbar = () => {
                     <p>Home</p>
                     <p>About</p>
                     <p>Contact</p>
-                    <button type='button' className='btn btn-warning navbar_joinus_button'>Join Us</button>
+                    <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button>
 
                 </div>
             </div>}

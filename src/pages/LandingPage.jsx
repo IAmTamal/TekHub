@@ -1,6 +1,7 @@
 import React from 'react'
 import CommunityBanner from '../components/CommunityBanner'
 import HeroBannerDeskop from '../components/HeroBannerDeskop'
+import ProjectsBanner from '../components/ProjectsBanner'
 import "../styles/LandingPage.css"
 
 const LandingPage = () => {
@@ -11,6 +12,8 @@ const LandingPage = () => {
                 <HeroBannerDeskop />
 
                 <CommunityBanner />
+
+                <ProjectsBanner />
 
                 <br />
 
