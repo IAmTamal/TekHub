@@ -5,12 +5,12 @@
 .cb_subparent1 {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .cb_leftdiv {
-  width: 500px;
-  max-width: 500px;
+  width: 450px;
+  max-width: 450px;
 }
 
 .cb_rightdiv {

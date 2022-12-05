@@ -1,5 +1,7 @@
 import React from 'react'
 import CommunityBanner from '../components/CommunityBanner'
+import DeveloperBanner from '../components/DeveloperBanner'
+import Footer from '../components/Footer'
 import HeroBannerDeskop from '../components/HeroBannerDeskop'
 import ProjectsBanner from '../components/ProjectsBanner'
 import "../styles/LandingPage.css"
@@ -15,9 +17,11 @@ const LandingPage = () => {
 
                 <ProjectsBanner />
 
+                <DeveloperBanner />
+
                 <br />
 
-
+                <Footer />
             </div>
         </>
     )

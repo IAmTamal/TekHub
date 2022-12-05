@@ -86,12 +86,12 @@ const CommunityBannerDesktop = () => {
 
 
                         <div style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}>
-                            <p className='cb_rightdiv_p2'>Explore and join the awesome tech communities around the globe OR add your community for others to join !</p>
+                            <p className='cb_rightdiv_p2'>You can explore and join some awesome tech communities around the globe OR add your community for others to join !</p>
                         </div>
 
-                        <button className='cb_rightdiv_btn' onClick={() => {
+                        {/* <button className='cb_rightdiv_btn' onClick={() => {
                             navigate("/communities")
-                        }}>See more communities</button>
+                        }}>See more communities</button> */}
                     </div>
                 </div>
             </div>
