@@ -1,10 +1,12 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
 import "../styles/HeroBannerDesktop.css"
 
 
 
 const HeroBannerDeskop = () => {
+
+    const navigate = useNavigate()
     return (
         <>
             <div className="container">
@@ -18,7 +20,9 @@ const HeroBannerDeskop = () => {
                             <p>Collaboration</p>
                         </div>
                         <p className='heroleftdiv_p3'>Join us on our journey to help you connect with other amazing devs, products, content and community ! </p>
-                        <button className='heroleftdiv_button'>Sign up now !</button>
+                        <button className='heroleftdiv_button' onClick={() => {
+                            navigate('/signup')
+                        }} >Sign up now !</button>
                     </div>
                 </div>
             </div>

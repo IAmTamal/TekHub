@@ -56,15 +56,15 @@
 
 @media screen and (max-width: 430px) {
   .cb_main_parent {
-    margin-top: 0rem;
+    margin-top: 5rem;
   }
 
   .cb_subparent1 {
-    display: block;
+    flex-direction: column-reverse;
   }
-
   .cb_leftdiv {
-    max-width: 99vw;
+    max-width: 95vw;
+    min-width: 95vw;
     width: auto;
   }
   .cb_rightdiv {
@@ -76,8 +76,6 @@
   }
 
   .cb_rightdiv_p1 {
-    width: 95vw;
-    max-width: 95vw;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
@@ -86,8 +84,10 @@
     font-size: 3rem;
     line-height: 50px;
     margin-bottom: 1.5rem !important;
-    color: #7353d4;
-    text-overflow: clip;
+    color: #a87ff3;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .cb_rightdiv_p2 {

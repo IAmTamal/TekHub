@@ -26,7 +26,7 @@ const Navbar = () => {
 
                     </div>
 
-                    <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button>
+                    {/* <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button> */}
                     <GiHamburgerMenu className='navbar_ham' onClick={() => { setshowdropdown(!showdropdown) }} />
 
 

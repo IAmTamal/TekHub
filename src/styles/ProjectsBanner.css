@@ -14,7 +14,6 @@
   font-size: 3.5rem;
   line-height: 70px;
   margin-bottom: 1.5rem !important;
-
   color: #a87ff3;
 }
 
@@ -47,4 +46,25 @@
   cursor: pointer;
   width: auto;
   margin: auto;
+}
+
+/* //* MOBILE */
+@media screen and (max-width: 430px) {
+  .pr_main_parent {
+    margin-top: 5rem;
+  }
+  .pr_subparent {
+    max-width: 100%;
+  }
+
+  .pr_p1 {
+    font-size: 3rem;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+  .pr_p2 {
+    width: 100%;
+  }
 }

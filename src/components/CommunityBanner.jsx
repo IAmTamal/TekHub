@@ -23,14 +23,11 @@ const CommunityBannerDesktop = () => {
 
     const handleMouse1 = () => {
         clearTimeout(resetTimeout);
-
         setAutoPlay(false);
     };
 
     const handleMouse2 = () => {
         setAutoPlay(true);
-
-
     };
 
     const handleEnd = () => {
@@ -46,20 +43,13 @@ const CommunityBannerDesktop = () => {
 
     return (
         <>
-
-
-
-
-
             <div className=" container cb_main_parent">
                 <div className="cb_subparent1">
                     <div className="cb_leftdiv">
 
                         <Carousel
-
                             ref={carouselRef}
                             breakPoints={breakPoints}
-                            // enableAutoPlay
                             enableAutoPlay={autoPlay}
                             isRTL={false}
                             showButton={false}
@@ -72,9 +62,6 @@ const CommunityBannerDesktop = () => {
                             <EddieFeat className="Feat_img" />
                             <FourCFeat className="Feat_img" />
                             <WmdFeat className="Feat_img" />
-
-
-
 
                         </Carousel>
 

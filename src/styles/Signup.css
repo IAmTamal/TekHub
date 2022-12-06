@@ -1,0 +1,82 @@
+.signup_subparent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signup_main_parent {
+  height: 100vh;
+  padding-top: 5rem;
+}
+.signup_img {
+  max-width: 480px;
+}
+
+.signup_textdiv {
+  width: 50%;
+  margin-left: 5rem;
+}
+
+.signup_form {
+  margin-top: 3rem;
+}
+
+.signup_textdiv_p1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  line-height: 70px;
+  color: #a87ff3;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.form-label {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.4rem;
+
+  letter-spacing: 1px;
+}
+
+input {
+  background-color: #28282b !important;
+  color: white !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem !important;
+}
+
+input:focus {
+  -webkit-box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+  -moz-box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+  box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+}
+
+.signup_btn {
+  /* background-color: #d58af6; */
+  background: #a87ff3;
+  box-shadow: 0px 0px 50px -10px rgba(151, 71, 255, 0.08);
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 6px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  width: 30%;
+}
+
+.signup_textdiv_p2 {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.signup_textdiv_span2 {
+  text-decoration: underline;
+  cursor: pointer;
+}

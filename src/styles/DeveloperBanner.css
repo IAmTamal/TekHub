@@ -71,17 +71,15 @@
     text-align: center;
   }
 
+  .dv_p1 {
+    font-size: 3rem;
+  }
+
   .dv_p2 {
     width: 100%;
   }
 
   .dv_imgdiv {
-    width: 90vw;
-    max-width: 90vw;
-  }
-
-  .dv_imgdiv img {
-    width: 90vw;
-    max-width: 90vw;
+    display: none;
   }
 }
