@@ -55,3 +55,33 @@
   width: auto;
   margin: auto;
 }
+
+/* //* MOBILE */
+@media screen and (max-width: 430px) {
+  .dv_parent {
+    margin-top: 3rem;
+  }
+
+  .dv_subparent {
+    flex-direction: column;
+  }
+
+  .dv_textdiv {
+    width: 100%;
+    text-align: center;
+  }
+
+  .dv_p2 {
+    width: 100%;
+  }
+
+  .dv_imgdiv {
+    width: 90vw;
+    max-width: 90vw;
+  }
+
+  .dv_imgdiv img {
+    width: 90vw;
+    max-width: 90vw;
+  }
+}

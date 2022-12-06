@@ -3,12 +3,14 @@
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+  flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 .comm_header_p1 {
   font-family: "Montserrat", sans-serif;
   font-size: 3.5rem;
-  max-width: 550px;
+  max-width: 70%;
   line-height: 70px;
   margin-bottom: 1.5rem !important;
   color: #a87ff3;
@@ -27,7 +29,7 @@
   color: white;
   font-size: 1rem;
   line-height: 1.8;
-
+  max-width: 70%;
   letter-spacing: 1px;
   margin-bottom: 10px;
   text-align: center;

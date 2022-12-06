@@ -43,11 +43,15 @@ const Communities = () => {
                         {/* <LeftWing /> */}
                         <p className="comm_header_p1">
                             Communities give you wings !
-                            <span className="comm_header_p2">
+                            {" "}
+                        </p>
+
+                        <div style={{ display: "flex", justifyContent: "center" }}>
+                            <p className="comm_header_p2">
                                 Join some of the best communities from around the world
                                 belonging to various domains.
-                            </span>{" "}
-                        </p>
+                            </p>
+                        </div>
 
                         {/* <RightWing /> */}
                     </div>

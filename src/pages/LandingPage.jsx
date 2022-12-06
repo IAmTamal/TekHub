@@ -12,12 +12,13 @@ const LandingPage = () => {
 
             <div className='HeroBannerDesktop_Parentdiv'>
                 <HeroBannerDeskop />
-
                 <DeveloperBanner />
+
+                {/* 
 
                 <CommunityBanner />
 
-                <ProjectsBanner />
+                <ProjectsBanner /> */}
 
 
 
