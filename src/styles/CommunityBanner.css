@@ -1,11 +1,11 @@
 .cb_main_parent {
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .cb_subparent1 {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
 .cb_leftdiv {
@@ -15,7 +15,8 @@
 
 .cb_rightdiv {
   text-align: right;
-  width: 60%;
+  width: 50%;
+  padding-top: 20px;
 }
 .cb_rightdiv_p1 {
   font-family: "Montserrat", sans-serif;
@@ -29,7 +30,7 @@
 
 .cb_rightdiv_p2 {
   font-family: "Poppins", sans-serif;
-  width: 80%;
+  width: 70%;
   color: white;
   font-size: 1rem;
   line-height: 1.8;
