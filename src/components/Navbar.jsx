@@ -12,7 +12,7 @@ const Navbar = () => {
             <div className=" container navbar_main_parent sticky-top" >
                 <div className='navbar_subparent'>
 
-                    <Link to='/' className='navbar_brand'>FellowCoders</Link>
+                    <Link to='/' className='navbar_brand'>TekHub</Link>
 
                     <div className="navbar_linksdiv">
 
