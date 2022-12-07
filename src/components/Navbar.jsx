@@ -9,7 +9,7 @@ const Navbar = () => {
     return (
         <>
 
-            <div className=" container navbar_main_parent" >
+            <div className=" container navbar_main_parent sticky-top" >
                 <div className='navbar_subparent'>
 
                     <Link to='/' className='navbar_brand'>FellowCoders</Link>
@@ -26,7 +26,7 @@ const Navbar = () => {
 
                     </div>
 
-                    {/* <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button> */}
+                    <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button>
                     <GiHamburgerMenu className='navbar_ham' onClick={() => { setshowdropdown(!showdropdown) }} />
 
 

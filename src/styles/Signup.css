@@ -80,3 +80,29 @@ input:focus {
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* //* MOBILE */
+@media screen and (max-width: 430px) {
+  .signup_subparent {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .signup_img {
+    display: none;
+  }
+
+  .signup_textdiv {
+    margin: auto;
+    width: 95%;
+  }
+
+  .signup_textdiv_p1 {
+    text-align: center;
+  }
+
+  .signup_btndiv {
+    display: flex;
+    justify-content: center;
+  }
+}

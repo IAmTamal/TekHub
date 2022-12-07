@@ -16,11 +16,15 @@ const Login = () => {
                     <div className="signup_textdiv">
                         <p className='signup_textdiv_p1'>Continue your journey with us !</p>
                         <form className='signup_form'>
-                            <div class="mb-4">
+                            {window.innerWidth > 430 ? <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label" >Email address</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autoFocus />
 
-                            </div>
+                            </div> : (<div class="mb-4">
+                                <label for="exampleInputEmail1" class="form-label" >Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+
+                            </div>)}
 
                             <div class="mb-4">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -30,7 +34,9 @@ const Login = () => {
 
                             <p className='signup_textdiv_p2'>Don't have an account ? <span className='signup_textdiv_span2' onClick={() => { navigate("/signup") }} >Sign up</span></p>
 
-                            <button type="submit" class="btn  signup_btn">Login</button>
+                            <div className="signup_btndiv">
+                                <button type="submit" class="btn  signup_btn">Login</button>
+                            </div>
                         </form>
                     </div>
                 </div>

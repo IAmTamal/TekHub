@@ -11,8 +11,13 @@
   text-align: center;
   margin: auto;
 }
-.hero_image_leftdiv p {
-  margin: 0px;
+
+.heroleftdiv_p2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 76px;
+  line-height: 80px;
+  margin-bottom: 1.5rem !important;
+  color: #a87ff3;
 }
 
 .heroleftdiv_p3 {
@@ -23,6 +28,9 @@
   letter-spacing: 1px;
 }
 
+.hero_image_leftdiv p {
+  margin: 0px;
+}
 .heroleftdiv_button {
   /* background-color: #d58af6; */
   background: #a87ff3;
@@ -36,14 +44,6 @@
   font-weight: 600;
   cursor: pointer;
   width: 30%;
-}
-
-.heroleftdiv_p2 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 76px;
-  line-height: 80px;
-  margin-bottom: 1.5rem !important;
-  color: #a87ff3;
 }
 
 .heroleftdiv_p3 {
