@@ -16,17 +16,6 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", require("./routes/Auth"));
-
-// //* user routes
-// app.use("/user", require("./routes/User"));
-
-// //* club routes
-// app.use("/club", require("./routes/Clubs"));
-
-// //* Display routes
-// app.use("/display", require("./routes/Display"));
-
-// //* Payment routes
-// app.use("/payment", require("./routes/Payment"));
+app.use("/profile", require("./routes/Profile"));
 
 app.listen(port, () => console.log("API IS RUNNING 🚀"));

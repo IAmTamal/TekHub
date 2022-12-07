@@ -15,30 +15,20 @@ const UserSchema = mongoose.Schema({
     address: {
         type: String,
     },
-    links: [
-        {
-            gh_link: {
-                type: String,
-            },
-            tw_link: {
-                type: String,
-            },
-            li_link: {
-                type: String,
-            },
-            pf_link: {
-                type: String,
-            },
-
-
-        }
-    ],
+    gh_link: {
+        type: String,
+    },
+    tw_link: {
+        type: String,
+    },
+    li_link: {
+        type: String,
+    },
+    pf_link: {
+        type: String,
+    },
     tech_stack: [
-        {
-            tech: {
-                type: String,
-            },
-        }
+        String
     ],
 
 });
