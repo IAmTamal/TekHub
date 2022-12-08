@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import TekContext from '../../context/TekContext'
 
 const Editprofile = () => {
+    const { drawerOpen, setDrawerOpen, anchor, state, setState } = useContext(TekContext);
     return (
-        <div>Editprofile</div>
+        <div className="container">
+            <div className="ep_subparent">
+                <div>{anchor}</div>
+            </div>
+        </div>
     )
 }
 
