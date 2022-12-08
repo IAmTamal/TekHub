@@ -1,7 +1,7 @@
 import Axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -11,23 +11,19 @@ const apiURL = [
 const API = apiURL[0];
 
 
+
 export const UserSignup = async (creds) => {
     try {
 
         const response = await Axios.post(`${API}/auth/signup`, creds);
-
-        if (response.status === 201) {
-            toast.success(response.data.message, {
-                position: toast.POSITION.TOP_RIGHT,
-            });
-        }
-        return response.data;
+        return response;
 
     } catch (error) {
         console.log(error)
         if (error.response.status === 409) {
             toast.error(error.response.data.message, {
                 position: toast.POSITION.TOP_RIGHT,
+
             });
         }
     }
@@ -36,18 +32,11 @@ export const UserSignup = async (creds) => {
 
 
 export const UserLogin = async (creds) => {
+
     try {
 
         const response = await Axios.post(`${API}/auth/login`, creds);
-
-        if (response.status === 201) {
-            Cookies.set('token', response.data.token);
-            toast.success(response.data.message, {
-                position: toast.POSITION.TOP_RIGHT,
-            });
-        }
-
-        return response.data;
+        return response;
 
     } catch (error) {
         toast.error(error.response.data.message, {

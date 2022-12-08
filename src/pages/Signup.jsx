@@ -14,10 +14,29 @@ const Signup = () => {
         setCreds({ ...creds, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log(creds)
-        UserSignup(creds);
+
+        const response = await UserSignup(creds);
+
+
+        if (response.status === 201) {
+            toast(response.data.message, {
+                position: 'top-right',
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                closeButton: false,
+                onClose: () => {
+                    navigate('/login');
+                },
+            });
+        }
+
+
     }
 
 

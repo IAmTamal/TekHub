@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { UserLogin } from "../service/AuthApi.js"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie';
 
 
 const Login = () => {
@@ -15,9 +16,28 @@ const Login = () => {
         setCreds({ ...creds, [e.target.name]: e.target.value })
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        UserLogin(creds);
+
+        const response = await UserLogin(creds);
+
+        if (response.status === 201) {
+            Cookies.set('token', response.data.token);
+            toast(response.data.message, {
+                position: 'top-right',
+                autoClose: 700,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                closeButton: false,
+                onClose: () => {
+                    navigate('/');
+                },
+            });
+        }
+
     }
     return (
         <>
@@ -25,7 +45,7 @@ const Login = () => {
 
                 <ToastContainer
                     position="top-right"
-                    autoClose={1000}
+                    autoClose={700}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
