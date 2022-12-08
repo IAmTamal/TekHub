@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const apiURL = [
+    "https://tekhub-server.vercel.app",
     "http://localhost:5000",
 ];
 const API = apiURL[0];
