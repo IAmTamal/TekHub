@@ -37,6 +37,20 @@ const Login = () => {
                             <div className="signup_btndiv">
                                 <button type="submit" class="btn  signup_btn">Login</button>
                             </div>
+
+                            <div className='signup_continuewithdiv'>
+                                <hr className='signup_hr' />
+                                <p>Or continue with</p>
+                                <hr className='signup_hr' />
+                            </div>
+
+                            <div className='signup_social_iconsdiv'>
+                                <div>
+                                    <img src="https://i.ibb.co/dWNXKj2/g1.png" alt="" className='signup_social_icons' />
+                                    <img src="https://i.ibb.co/2NZZfmC/git1.png" alt="" className='signup_social_icons' style={{ backgroundColor: "white", borderRadius: "50%" }} />
+                                    <img src="https://i.ibb.co/4N6NK5T/t1.png" alt="" className='signup_social_icons' />
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

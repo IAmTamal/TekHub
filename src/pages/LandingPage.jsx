@@ -6,9 +6,13 @@ import HeroBannerDeskop from '../components/HeroBannerDeskop'
 import ProjectsBanner from '../components/ProjectsBanner'
 import "../styles/LandingPage.css"
 
+
 const LandingPage = () => {
     return (
         <>
+
+
+
 
             <div className='HeroBannerDesktop_Parentdiv'>
                 <HeroBannerDeskop />

@@ -19,6 +19,7 @@
 
 .signup_form {
   margin-top: 3rem;
+  width: 80%;
 }
 
 .signup_textdiv_p1 {
@@ -34,7 +35,7 @@
 .form-label {
   font-family: "Poppins", sans-serif;
   color: white;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 
   letter-spacing: 1px;
 }
@@ -60,12 +61,27 @@ input:focus {
   border: none;
   border-radius: 6px;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 10px 20px;
   color: black;
   font-weight: 600;
   cursor: pointer;
-  width: 30%;
+  width: 100%;
+}
+
+.signup_btn:hover {
+  background: #a87ff3;
+  box-shadow: 0px 0px 50px -10px rgba(151, 71, 255, 0.08);
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 6px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
 }
 
 .signup_textdiv_p2 {
@@ -78,6 +94,53 @@ input:focus {
 
 .signup_textdiv_span2 {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.signup_btndiv {
+  display: flex;
+  justify-content: center;
+}
+
+.signup_continuewithdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup_hr {
+  color: white;
+  height: 2px;
+  width: 100px;
+  background-color: white;
+}
+
+.signup_continuewithdiv p {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 0 10px;
+}
+
+.signup_social_iconsdiv {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.signup_social_iconsdiv div {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.signup_social_icons {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
   cursor: pointer;
 }
 

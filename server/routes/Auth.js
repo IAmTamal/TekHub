@@ -14,7 +14,7 @@ router.post("/signup", async (req, res) => {
         const existingUser = await User.findOne({ email });
 
         if (existingUser) {
-            return res.status(409).json({ message: "User already exists" });
+            return res.status(409).json({ message: "User already exists, please login" });
         }
 
         const hashpassword = await bcrypt.hash(data.password, 10);
@@ -26,9 +26,9 @@ router.post("/signup", async (req, res) => {
 
 
         await UserData.save();
-        res.status(201).json({ message: "Registration successful, please login" })
+        return res.status(201).json({ message: "Signup successful, please login" })
     } catch (e) {
-        res.status(500).json({ message: "Internal Server Error" })
+        res.status(500).json({ message: "Internal server error, try again later" })
     }
 });
 
@@ -40,7 +40,7 @@ router.post("/login", async (req, res) => {
         const existingUser = await User.findOne({ email });
 
         if (!existingUser) {
-            return res.status(409).json({ message: "User does not exist" });
+            return res.status(409).json({ message: "User not found, please sign up" });
         }
 
         const isPasswordCorrect = await bcrypt.compare(data.password, existingUser.password);
@@ -49,15 +49,21 @@ router.post("/login", async (req, res) => {
             return res.status(400).json({ message: "Invalid Credentials" });
         }
 
-        const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, "test",
-            { expiresIn: "1h" });
 
-        res.status(200).json({ result: existingUser, token });
+        const payload = { User: { id: existingUser._id } };
+        // const token = jwt.sign({ id: existingUser._id }, "test");
+
+        jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
+            if (err) {
+                return res.status(500).json({ message: "Internal server error, try again later" })
+            }
+            return res.status(201).json({ token, message: "Login successful" });
+        });
 
 
 
     } catch (error) {
-
+        res.status(500).json({ message: "Internal server error, try again later" })
     }
 })
 
