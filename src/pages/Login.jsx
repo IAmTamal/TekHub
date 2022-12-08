@@ -1,14 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/Signup.css"
 import { useNavigate } from 'react-router-dom'
+import { UserLogin } from "../service/AuthApi.js"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
 
     const navigate = useNavigate()
+    const [creds, setCreds] = useState({ email: "", password: "" })
+
+    const handleChange = (e) => {
+        setCreds({ ...creds, [e.target.name]: e.target.value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        UserLogin(creds);
+    }
     return (
         <>
             <div className="container signup_main_parent">
+
+                <ToastContainer
+                    position="top-right"
+                    autoClose={1000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    closeButton={false}
+                    limit={1}
+                />
 
                 <div className="signup_subparent">
                     <img src="https://i.ibb.co/jWvwqsK/heydesktop2.png" alt="" className='signup_img' />
@@ -18,24 +45,24 @@ const Login = () => {
                         <form className='signup_form'>
                             {window.innerWidth > 430 ? <div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label" >Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autoFocus />
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autoFocus name='email' value={creds.email} onChange={handleChange} />
 
                             </div> : (<div class="mb-4">
                                 <label for="exampleInputEmail1" class="form-label" >Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name='email' value={creds.email} onChange={handleChange} />
 
                             </div>)}
 
                             <div class="mb-4">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                                <input type="password" class="form-control" id="exampleInputPassword1" name='password' value={creds.password} onChange={handleChange} />
                             </div>
 
 
                             <p className='signup_textdiv_p2'>Don't have an account ? <span className='signup_textdiv_span2' onClick={() => { navigate("/signup") }} >Sign up</span></p>
 
                             <div className="signup_btndiv">
-                                <button type="submit" class="btn  signup_btn">Login</button>
+                                <button type="submit" class="btn  signup_btn" onClick={handleSubmit}>Login</button>
                             </div>
 
                             <div className='signup_continuewithdiv'>

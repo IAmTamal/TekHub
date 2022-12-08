@@ -1,6 +1,7 @@
 import Axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Cookies from 'js-cookie';
 
 
 
@@ -40,7 +41,7 @@ export const UserLogin = async (creds) => {
         const response = await Axios.post(`${API}/auth/login`, creds);
 
         if (response.status === 201) {
-            console.log(response.data.token)
+            Cookies.set('token', response.data.token);
             toast.success(response.data.message, {
                 position: toast.POSITION.TOP_RIGHT,
             });
