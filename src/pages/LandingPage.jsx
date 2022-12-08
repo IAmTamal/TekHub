@@ -1,16 +1,18 @@
 import React from 'react'
-import CommunityBanner from '../components/CommunityBanner'
-import DeveloperBanner from '../components/DeveloperBanner'
+import CommunityBanner from '../components/landingcomponents/CommunityBanner'
+import DeveloperBanner from '../components/landingcomponents/DeveloperBanner'
 import Footer from '../components/Footer'
-import HeroBannerDeskop from '../components/HeroBannerDeskop'
-import ProjectsBanner from '../components/ProjectsBanner'
+import HeroBannerDeskop from '../components/landingcomponents/HeroBannerDeskop'
+import ProjectsBanner from '../components/landingcomponents/ProjectsBanner'
 import "../styles/LandingPage.css"
-import { useAuth0 } from '@auth0/auth0-react';
+
 
 
 const LandingPage = () => {
 
-    const { logout } = useAuth0();
+
+
+
     return (
         <>
 
@@ -23,7 +25,8 @@ const LandingPage = () => {
                 <CommunityBanner />
                 <ProjectsBanner />
 
-                <button className='btn btn-info' onClick={() => { logout() }}>Logout</button>
+
+
                 <Footer />
             </div>
         </>

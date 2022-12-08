@@ -5,6 +5,19 @@ const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 
 
+router.get("/user/:id", async (req, res) => {
+    try {
+
+        const user = await User.findById(req.params.id);
+        return res.status(201).json(user);
+
+    } catch (error) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+})
+
+
 router.put("/edituser/:id", async (req, res) => {
     try {
         const data = req.body;

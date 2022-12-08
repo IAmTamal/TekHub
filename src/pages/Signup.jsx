@@ -105,7 +105,7 @@ const Signup = () => {
                                 <button type="submit" class="btn  signup_btn" onClick={handleSubmit}>Signup</button>
                             </div>
 
-                            <div className='signup_continuewithdiv'>
+                            {/* <div className='signup_continuewithdiv'>
                                 <hr className='signup_hr' />
                                 <p>Or continue with</p>
                                 <hr className='signup_hr' />
@@ -117,7 +117,7 @@ const Signup = () => {
                                     <img src="https://i.ibb.co/2NZZfmC/git1.png" alt="" className='signup_social_icons' style={{ backgroundColor: "white", borderRadius: "50%" }} onClick={() => { loginWithRedirect() }} />
 
                                 </div>
-                            </div>
+                            </div> */}
                         </form>
                     </div>
                 </div>

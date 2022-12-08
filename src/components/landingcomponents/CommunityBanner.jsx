@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-import "../styles/CommunityBanner.css";
+import "../../styles/CommunityBanner.css";
 import Carousel from "react-elastic-carousel";
-import { ReactComponent as EddieFeat } from '../assets/EddieHub_feat.svg';
-import { ReactComponent as FourCFeat } from '../assets/4c_feat.svg';
-import { ReactComponent as WmdFeat } from '../assets/wmd_feat.svg';
+import { ReactComponent as EddieFeat } from '../../assets/EddieHub_feat.svg';
+import { ReactComponent as FourCFeat } from '../../assets/4c_feat.svg';
+import { ReactComponent as WmdFeat } from '../../assets/wmd_feat.svg';
 import { Navigate, useNavigate } from 'react-router-dom';
 
 const breakPoints = [

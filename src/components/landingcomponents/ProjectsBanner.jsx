@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/ProjectsBanner.css";
+import "../../styles/ProjectsBanner.css";
 const ProjectsBanner = () => {
     return (
         <>

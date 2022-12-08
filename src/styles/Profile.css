@@ -1,0 +1,18 @@
+.pf_subparent h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  max-width: 70%;
+  line-height: 70px;
+  margin-bottom: 1.5rem !important;
+  color: #a87ff3;
+  margin-top: 3rem;
+}
+
+.pf_hr1 {
+  background-color: white;
+  color: white;
+  width: 50%;
+  height: 1px;
+  border: 1px solid white;
+  opacity: 0.7;
+}

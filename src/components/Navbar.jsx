@@ -2,12 +2,48 @@ import React, { useState } from 'react'
 import "../styles/Navbar.css"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
 
     const [showdropdown, setshowdropdown] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        Cookies.remove('token');
+        toast("Logging you out", {
+            position: 'top-right',
+            autoClose: 700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            closeButton: false,
+            onClose: () => {
+                navigate('/login');
+            },
+        });
+    }
     return (
         <>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={700}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                closeButton={false}
+                limit={1}
+            />
 
             <div className=" container navbar_main_parent sticky-top" >
                 <div className='navbar_subparent'>
@@ -17,16 +53,19 @@ const Navbar = () => {
                     <div className="navbar_linksdiv">
 
                         <Link to='/' className='navbar_links'>Home</Link>
-                        <Link to='/about' className='navbar_links'>About</Link>
+
                         <Link to='/communities' className='navbar_links'>Communities</Link>
                         <Link to='/projects' className='navbar_links'>Projects</Link>
+                        {Cookies.get('token') && <Link to='/profile' className='navbar_links'>Dashboard</Link>}
 
 
 
 
                     </div>
 
-                    <button type='button' className='btn btn-warning navbar_joinus_button'>Sign up</button>
+                    {Cookies.get('token') ? <button type='button' className='btn btn-warning navbar_joinus_button' onClick={() => { handleLogout() }}>Log out</button> : <button type='button' className='btn btn-warning navbar_joinus_button' onClick={() => { navigate('/signup') }}>Sign up</button>}
+
+
                     <GiHamburgerMenu className='navbar_ham' onClick={() => { setshowdropdown(!showdropdown) }} />
 
 

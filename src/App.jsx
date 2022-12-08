@@ -8,6 +8,7 @@ import About from './pages/About'
 import Communities from './pages/Communities'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
+import Profile from './pages/Profile'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/communities" element={<Communities />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/profile" element={<Profile />} />
 
         </Routes>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import "../styles/HeroBannerDesktop.css"
+import "../../styles/HeroBannerDesktop.css"
+import Cookies from 'js-cookie'
 
 
 
@@ -20,9 +21,9 @@ const HeroBannerDeskop = () => {
                             <p>Collaboration</p>
                         </div>
                         <p className='heroleftdiv_p3'>Join us on our journey to help you connect with other amazing devs, products, content and community ! </p>
-                        <button className='heroleftdiv_button' onClick={() => {
+                        {!Cookies.get('token') && <button className='heroleftdiv_button' onClick={() => {
                             navigate('/signup')
-                        }} >Sign up now !</button>
+                        }} >Sign up now !</button>}
                     </div>
                 </div>
             </div>

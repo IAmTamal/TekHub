@@ -3,11 +3,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
-const apiURL = [
-    "https://tekhub-server.vercel.app",
-    "http://localhost:5000",
-];
-const API = apiURL[0];
+const API = import.meta.env.VITE_SERVER_API;
 
 
 
