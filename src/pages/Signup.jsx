@@ -4,10 +4,12 @@ import { useNavigate } from 'react-router-dom'
 import { UserSignup } from "../service/AuthApi.js"
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useAuth0 } from '@auth0/auth0-react';
 
 
 const Signup = () => {
     const navigate = useNavigate()
+    const { loginWithRedirect } = useAuth0();
     const [creds, setCreds] = useState({ name: "", email: "", password: "" })
 
     const handleChange = (e) => {
@@ -111,9 +113,9 @@ const Signup = () => {
 
                             <div className='signup_social_iconsdiv'>
                                 <div>
-                                    <img src="https://i.ibb.co/dWNXKj2/g1.png" alt="" className='signup_social_icons' />
-                                    <img src="https://i.ibb.co/2NZZfmC/git1.png" alt="" className='signup_social_icons' style={{ backgroundColor: "white", borderRadius: "50%" }} />
-                                    <img src="https://i.ibb.co/4N6NK5T/t1.png" alt="" className='signup_social_icons' />
+                                    <img src="https://i.ibb.co/dWNXKj2/g1.png" alt="" className='signup_social_icons' onClick={() => { loginWithRedirect() }} />
+                                    <img src="https://i.ibb.co/2NZZfmC/git1.png" alt="" className='signup_social_icons' style={{ backgroundColor: "white", borderRadius: "50%" }} onClick={() => { loginWithRedirect() }} />
+
                                 </div>
                             </div>
                         </form>
