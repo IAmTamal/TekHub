@@ -1,27 +1,12 @@
-import React from 'react';
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react'
+import { Outlet, Navigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
-const RouteGuard = ({ component: Component, ...rest }) => {
-
-    function hasJWT() {
-        let flag = false;
-
-        //check user has JWT token
-        localStorage.getItem("token") ? flag = true : flag = false
-
-        return flag
-    }
-
+const Routeguard = () => {
+    const token = Cookies.get('token');
     return (
-        <Route {...rest}
-            render={props => (
-                hasJWT() ?
-                    <Component {...props} />
-                    :
-                    <Redirect to={{ pathname: '/login' }} />
-            )}
-        />
-    );
-};
+        (token !== undefined && token !== "") ? <Outlet /> : <Navigate to="/login" />
+    )
+}
 
-export default RouteGuard;
+export default Routeguard

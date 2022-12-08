@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import "../styles/Profile.css"
-import { getUser } from '../service/ProfileApi'
+import "../../styles/Profile.css"
+import { getUser } from '../../service/ProfileApi'
 import Cookies from 'js-cookie'
 
 

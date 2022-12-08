@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import Navbar from './components/Navbar'
 import LandingPage from './pages/LandingPage'
 import './styles/App.css'
@@ -8,10 +7,12 @@ import About from './pages/About'
 import Communities from './pages/Communities'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import Profile from './pages/Profile'
+import Profile from './pages/profilepages/Profile'
+import Routeguard from './middleware/Routeguard'
+import Editprofile from './pages/profilepages/Editprofile'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -25,7 +26,13 @@ function App() {
           <Route exact path="/communities" element={<Communities />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/login" element={<Login />} />
-          <Route exact path="/profile" element={<Profile />} />
+
+          <Route element={<Routeguard />}>
+            <Route exact path="/profile/:id" element={<Profile />} />
+            <Route exact path="/editprofile/:id" element={<Editprofile />} />
+
+          </Route>
+
 
         </Routes>
 
@@ -38,3 +45,9 @@ function App() {
 }
 
 export default App
+
+
+
+//! PROFILE PAGE (Profile.jsx) = Profile stuffs + Edit stuffs(EditProfile.jsx)
+
+//! Profile stuffs = Profile page + Profile communities + Profile projects + Profile comments
