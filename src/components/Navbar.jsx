@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../styles/Navbar.css"
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { Link } from 'react-router-dom'
@@ -6,14 +6,19 @@ import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import TekContext from '../context/TekContext'
+import { getUser } from '../service/ProfileApi'
 
 const Navbar = () => {
 
     const [showdropdown, setshowdropdown] = useState(false);
+    const [isusername, setisusername] = useState(false);
     const navigate = useNavigate();
 
     const handleLogout = () => {
         Cookies.remove('token');
+        localStorage.removeItem('username');
+        setisusername(false);
         toast("Logging you out", {
             position: 'top-right',
             autoClose: 700,
@@ -28,6 +33,21 @@ const Navbar = () => {
             },
         });
     }
+
+    const getuser = async () => {
+        const response = await getUser();
+        localStorage.setItem('username', "/profile/" + response.data.username);
+        setisusername(true);
+
+    }
+
+    useEffect(() => {
+        if (Cookies.get('token') !== undefined && Cookies.get('token') !== null) {
+            getuser();
+        }
+    }, [Cookies.get('token')]);
+
+
     return (
         <>
 
@@ -56,7 +76,8 @@ const Navbar = () => {
 
                         <Link to='/communities' className='navbar_links'>Communities</Link>
                         <Link to='/projects' className='navbar_links'>Projects</Link>
-                        {Cookies.get('token') && <Link to='/profile' className='navbar_links'>Dashboard</Link>}
+
+                        {isusername && <Link to={localStorage.getItem('username')} className='navbar_links'>Dashboard</Link>}
 
 
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../styles/Profile.css"
 import { getUser } from '../../service/ProfileApi'
 import Cookies from 'js-cookie'
@@ -6,29 +6,27 @@ import Cookies from 'js-cookie'
 
 const Profile = () => {
 
-    // const getuser = async () => {
+    const [user, setuser] = useState();
 
-    //     const token = Cookies.get('token');
-
-
-
-    //     const response = await getUser();
-    //     console.log(response);
-    // }
+    const getuser = async () => {
+        const response = await getUser();
+        console.log(response.data);
+        setuser(response.data);
+    }
 
 
-    // useEffect(() => {
-
-    // }, []);
+    useEffect(() => {
+        getuser();
+    }, []);
     return (
         <>
 
-            <div className="container pf_mainparent">
+            {user !== undefined && <div className="container pf_mainparent">
                 <div className="pf_subparent">
-                    <h1>Welcome to your profile</h1>
+                    <h1>Welcome, {user.name}</h1>
                     <hr className='pf_hr1' />
                 </div>
-            </div>
+            </div>}
 
         </>
     )

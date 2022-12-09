@@ -1,5 +1,6 @@
-import react from "react";
+import react, { useEffect } from "react";
 import TekContext from "./TekContext";
+import Cookies from "js-cookie";
 
 const TekState = (props) => {
     const [drawerOpen, setDrawerOpen] = react.useState(true);
@@ -11,6 +12,24 @@ const TekState = (props) => {
         right: false,
     });
 
+
+
+    const [user, setuser] = react.useState();
+    // var profileroute = "";
+    const [username, setusername] = react.useState("");
+    const [profileroute, setprofileroute] = react.useState("/profile/default");
+
+    // useEffect(() => {
+    //     if (Cookies.get('token') !== undefined && Cookies.get('token') !== null && Cookies.get('token') !== "" && Cookies.get('token') !== "undefined" && Cookies.get('token') !== "null" && Cookies.get('token') !== " ") {
+    //         const username = user?.name.split(' ');
+    //         setprofileroute(`/profile/${username}`);
+
+    //     }
+    // }, [Cookies.get('token')]);
+
+
+    // var profileroute = ""
+
     return (
         <TekContext.Provider
             value={{
@@ -19,6 +38,7 @@ const TekState = (props) => {
                 anchor,
                 state,
                 setState,
+                user, setuser, profileroute, setprofileroute
             }}
         >
             {props.children}

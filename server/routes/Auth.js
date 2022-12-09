@@ -22,6 +22,7 @@ router.post("/signup", async (req, res) => {
             name: data.name,
             email: data.email,
             password: hashpassword,
+            username: data.email.split("@")[0] + Math.floor(Math.random() * 1000),
         });
 
 

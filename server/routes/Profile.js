@@ -5,34 +5,64 @@ const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 
 
-router.get("/user/:id", async (req, res) => {
+// getting the profile data of the user
+router.get("/", async (req, res) => {
     try {
+        const token = req.header("Authorization").replace("Bearer ", "");
+        console.log("Token is " + token);
 
-        const user = await User.findById(req.params.id);
+        if (!token) {
+            return res.status(401).json({ msg: "No token, authorization denied" });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        console.log("User id " + decoded.User.id);
+
+        const user = await User.findById(decoded.User.id);
+        console.log(user);
+
         return res.status(201).json(user);
 
     } catch (error) {
-        console.error(err.message);
+        console.error(error.message);
         res.status(500).send("Server Error");
     }
 })
 
 
-router.put("/edituser/:id", async (req, res) => {
+// edit the profile data of the user
+router.put("/edit", async (req, res) => {
     try {
+
+        const token = req.header("Authorization").replace("Bearer ", "");
+
+        if (!token) {
+            return res.status(401).json({ msg: "No token, authorization denied" });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
         const data = req.body;
+
+        const newuserdata = {}
+
+        if (data.name) newuserdata.name = data.name;
+        if (data.email) newuserdata.email = data.email;
+        if (data.username) newuserdata.username = data.username;
+        if (data.address) newuserdata.address = data.address;
+        if (data.gh_link) newuserdata.gh_link = data.gh_link;
+        if (data.tw_link) newuserdata.tw_link = data.tw_link;
+        if (data.li_link) newuserdata.li_link = data.li_link;
+        if (data.pf_link) newuserdata.pf_link = data.pf_link;
+
+
         const user = await User.findOneAndUpdate(
-            { _id: req.params.id },
-            {
-                name: data.name,
-                address: data.address,
-                gh_link: data.gh_link,
-                tw_link: data.tw_link,
-                li_link: data.li_link,
-                pf_link: data.pf_link,
-            }
+            { _id: decoded.User.id },
+            { $set: newuserdata },
+            { new: true }
         );
-        res.json(data.gh_link);
+
+
+        return res.status(201).json({ msg: "Profile Updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");
@@ -42,12 +72,12 @@ router.put("/edituser/:id", async (req, res) => {
 
 // here we are adding tech stack to the user, techstack is basically an array of strings
 // we are pushing the strings to the array, with the help of $each we are able to append an array to the tech_stack array
-router.put("/addtech/:id", async (req, res) => {
+router.put("/addtech", async (req, res) => {
     try {
         const data = req.body;
         const
             user = await User.findOneAndUpdate(
-                { _id: req.params.id },
+                { _id: data.id },
                 {
                     $push: {
                         "tech_stack": { $each: data.tech_stack }
@@ -63,12 +93,12 @@ router.put("/addtech/:id", async (req, res) => {
 
 // here we are removing tech stack from the user, techstack is basically an array of strings
 // we are pulling all the strings from the array that we want to remove with the help of  $pullAll command
-router.put("/removetech/:id", async (req, res) => {
+router.put("/removetech", async (req, res) => {
     try {
         const data = req.body;
         const
             user = await User.findOneAndUpdate(
-                { _id: req.params.id },
+                { _id: data.id },
                 {
                     $pullAll: {
                         "tech_stack": data.tech_stack

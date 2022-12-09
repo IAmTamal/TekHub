@@ -12,6 +12,9 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    username:{
+        type:String,
+    },
     address: {
         type: String,
     },
@@ -30,6 +33,7 @@ const UserSchema = mongoose.Schema({
     tech_stack: [
         String
     ],
+    
 
 });
 
