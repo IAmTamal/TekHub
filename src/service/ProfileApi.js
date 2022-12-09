@@ -7,17 +7,13 @@ const API = import.meta.env.VITE_SERVER_API;
 
 export const getUser = async () => {
     try {
-
-        console.log(Cookies.get("token"));
-
         const response = await Axios.get(`${API}/profile/`, {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`,
             },
         });
 
-        console.log("Here is the response")
-        console.log(response);
+
         return response;
     } catch (error) {
         console.log(error)

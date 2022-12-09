@@ -9,17 +9,14 @@ var jwt = require("jsonwebtoken");
 router.get("/", async (req, res) => {
     try {
         const token = req.header("Authorization").replace("Bearer ", "");
-        console.log("Token is " + token);
 
         if (!token) {
             return res.status(401).json({ msg: "No token, authorization denied" });
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log("User id " + decoded.User.id);
 
         const user = await User.findById(decoded.User.id);
-        console.log(user);
 
         return res.status(201).json(user);
 
