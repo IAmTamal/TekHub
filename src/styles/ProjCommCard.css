@@ -54,4 +54,8 @@
   .commcard_card_textdiv {
     text-align: center;
   }
+
+  .commcard_card {
+    margin-right: 0px;
+  }
 }

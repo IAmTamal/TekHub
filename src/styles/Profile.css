@@ -9,10 +9,6 @@
   line-height: 70px;
   margin-bottom: 1.5rem !important;
   color: #a87ff3;
-
-  /* border-bottom: solid rgba(255, 255, 255, 0.866);
-  width: fit-content;
-  padding-bottom: 5px; */
 }
 
 .pf_hr1 {
@@ -32,6 +28,11 @@
 .pf_headerdiv .textdiv {
   width: 60%;
 }
+
+.pf_headerdiv .textdiv .namediv img {
+  display: none;
+}
+
 .pf_headerdiv .textdiv p {
   font-family: "Poppins", sans-serif;
   color: white;
@@ -90,4 +91,64 @@
   padding: 0 0.5rem;
   border-radius: 5px;
   margin-right: 1rem;
+}
+
+/* //* MOBILE */
+
+@media screen and (max-width: 430px) {
+  .pf_headerdiv {
+    flex-direction: column;
+  }
+  .pf_subparent h1 {
+    font-size: 3rem;
+    line-height: 60px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .pf_headerdiv .textdiv {
+    width: 95%;
+  }
+
+  .pf_headerdiv .textdiv .namediv {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pf_headerdiv .textdiv .namediv img {
+    display: flex;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    margin-right: 1rem;
+  }
+
+  .pf_headerdiv .imgdiv img {
+    display: none;
+  }
+
+  .pf_headerdiv .textdiv p {
+    font-size: 1rem;
+  }
+
+  .pf_techskills_headerdiv p {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .pf_techskills_techdiv {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .pf_projcomm_headerdiv p {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .pf_projcomm_projectsdiv {
+    justify-content: center;
+    width: 100%;
+  }
 }

@@ -65,7 +65,11 @@ const Profile = () => {
                     {/* NAME AND DESCRIPTION */}
                     <div className="pf_headerdiv">
                         <div className="textdiv">
-                            <h1>{user.name}</h1>
+
+                            <div className="namediv">
+                                <h1>{user.name}</h1>
+                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                            </div>
                             <p>Hello i'm Tamal, a Fullstack Web Developer passionate about developing production-ready web applications while building and working with teams of Software Developers ! </p>
                         </div>
 
