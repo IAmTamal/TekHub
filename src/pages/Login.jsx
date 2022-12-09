@@ -18,19 +18,7 @@ const Login = () => {
         setCreds({ ...creds, [e.target.name]: e.target.value })
     }
 
-    // const setusername = async (e) => {
 
-    //     if (Cookies.get('token') !== undefined && Cookies.get('token') !== null) {
-    //         const response2 = await getUser();
-
-    //         if (response2.status === 201) {
-    //             console.log(response2.data.username);
-    //             localStorage.setItem('username', "/profile/" + response2.data.username);
-    //         }
-
-    //     }
-
-    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -38,12 +26,13 @@ const Login = () => {
         const response = await UserLogin(creds);
 
 
+
         if (response.status === 201) {
 
-            console.log(response.data); //valid jinish dichhe
-            Cookies.set('token', response.data.token); //valid jinish dichhe
+            console.log(response.data);
+            Cookies.set('token', response.data.token);
 
-            // setusername();
+
 
 
             toast(response.data.message, {

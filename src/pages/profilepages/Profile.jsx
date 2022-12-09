@@ -70,7 +70,7 @@ const Profile = () => {
                                 <h1>{user.name}</h1>
                                 <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
                             </div>
-                            <p>Hello i'm Tamal, a Fullstack Web Developer passionate about developing production-ready web applications while building and working with teams of Software Developers ! </p>
+                            <p>{user.bio} </p>
                         </div>
 
                         <div className="imgdiv">
@@ -81,7 +81,7 @@ const Profile = () => {
 
                     {/* TECH STACK */}
                     <div className="pf_projdiv">
-                        <ProfileTechSkills tech={tech} />
+                        <ProfileTechSkills tech={user.tech} />
                     </div>
 
 

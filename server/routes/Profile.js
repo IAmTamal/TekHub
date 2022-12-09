@@ -45,6 +45,7 @@ router.put("/edit", async (req, res) => {
         if (data.name) newuserdata.name = data.name;
         if (data.email) newuserdata.email = data.email;
         if (data.username) newuserdata.username = data.username;
+        if (data.bio) newuserdata.bio = data.bio;
         if (data.address) newuserdata.address = data.address;
         if (data.gh_link) newuserdata.gh_link = data.gh_link;
         if (data.tw_link) newuserdata.tw_link = data.tw_link;
@@ -71,17 +72,25 @@ router.put("/edit", async (req, res) => {
 // we are pushing the strings to the array, with the help of $each we are able to append an array to the tech array
 router.put("/addtech", async (req, res) => {
     try {
+        const token = req.header("Authorization").replace("Bearer ", "");
+
+        if (!token) {
+            return res.status(401).json({ msg: "No token, authorization denied" });
+        }
+
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
         const data = req.body;
         const
             user = await User.findOneAndUpdate(
-                { _id: data.id },
+                { _id: decoded.User.id },
                 {
                     $push: {
                         "tech": { $each: data.tech }
                     },
                 }
             );
-        res.json(user);
+        res.status(201).json({ msg: "Tech Stack Updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");

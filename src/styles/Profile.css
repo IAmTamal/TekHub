@@ -135,6 +135,9 @@
   .pf_techskills_headerdiv p {
     font-size: 3rem;
     text-align: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .pf_techskills_techdiv {
@@ -145,6 +148,9 @@
   .pf_projcomm_headerdiv p {
     font-size: 3rem;
     text-align: center;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
   }
 
   .pf_projcomm_projectsdiv {

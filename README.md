@@ -1,28 +1,15 @@
 ![TekHub BannerCompressed](https://user-images.githubusercontent.com/72851613/206746872-866d3edf-43f5-46a1-8084-4ff7efb128be.png)
 
-
 <br/>
 
 <h1 align="center">
 Tech, Community, Collaboration 🚀 <br/>
 </h1>
 
-<br>
 <p align="center">
-Join as a User, NGO, Club or Charity and help us make the world a better place. You can donate, buy, sell, volunteer, and help us in multiple ways. We also have events tab for organizations to post their events for users to attend those without a lot of hassle. <br> Milan is Opensource too, come, contribute 🚀 
-</p>
-<br>
-
-<h1 align="center">
-Why the name - 'Milan' ?
-</h1>
-<br>
-<p align="center">
-The word ‘Milan’ when translated from its colloquial form into English means ‘conjugation’.
-It is often seen that people get scammed when their intentions are in lieu they were just trying to do good for other people, they were trying to extend their help. Again, it is seen that there are some Clubs or NGOs who do not get enough funds to work for humanitarian causes because of the lack of proper representation.
+TekHub is an Opensource initiative to connect techies with amazing content, communities, developers, projects and more around the globe. You can showcase your projects, communities, skills and at the same time see others, join more community. 
 </p>
 <br/>
-
 
 <!-- //* CONTRIBUTE  -->
 
@@ -37,8 +24,6 @@ Contributing to the Project
     <img alt="C" src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge">
     <img alt="C" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white">
     <img alt="C" src="https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white">
-    <img alt="C" src="https://img.shields.io/badge/Heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white">
-    <img alt="C" src="https://img.shields.io/badge/Netlify-%2300C7B7.svg?style=for-the-badge&logo=netlify&logoColor=white">
     <img alt="C" src="https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white">
     <img alt="C" src="https://img.shields.io/badge/VSCode-%23007ACC.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white">
     <img alt="C" src="https://img.shields.io/badge/Open%20Source-%23F05032.svg?style=for-the-badge&logo=open-source-initiative&logoColor=white">
@@ -53,10 +38,10 @@ Contributing to the Project
 </br>
 
 <p align="center">
-Milan is built using the MERN Stack. The designing has been done using Canva, Figma and some other tools. You can surely make a NEW ISSUE, or solve AN EXISTING ISSUE - the choice is yours. Apart from code, you can also help us with documentation, Automations or/and UI/UX. 🚀 </p>
+We are using <strong>React, CSS</strong>  for the frontend along with Vite and for the backend we have used <strong>Express, Node and MongoDB</strong>  along with javascript all over. For designing we have used Canva, Figma and other assets available on the internet.  </p>
 
 <p align="center">
-It is always recommended that you *open an issue and get it assined to you* before working on any feature which would bring clarity in working as well as it ensures that no two people are working on the same thing.  
+It is always recommended that you <strong>open an issue and get it assined to you</strong> before working on any feature which would bring clarity in working as well as it ensures that no two people are working on the same thing.  
 </p>
 
 </br>
@@ -77,41 +62,17 @@ We request all the people who wish to contribute to follow the set of guidelines
     
 <h5 align="center"><a href="https://github.com/IAmTamal/Milan/blob/main/rules/BackendSetup.md">🛠 SETTING UP THE BACKEND LOCALLY</a></h5>
 
-<h5 align="center"><a href="https://github.com/IAmTamal/Milan/blob/main/rules/DockerSetup.md">🛠 SETTING UP THE APP WITH DOCKER</a></h5>
-
+<!-- <h5 align="center"><a href="https://github.com/IAmTamal/Milan/blob/main/rules/DockerSetup.md">🛠 SETTING UP THE APP WITH DOCKER</a></h5> -->
 
 </br>
-
-
 <h1 align="center">
-Most active contributors 🚀
+License
 </h1>
 
-<br>
-
 <p align="center">
-<a  href="https://github.com/IAmTamal/Milan/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=IAmTamal/Milan" />
-</a>
-</p>
-</br>
-
+Milan is Licensed under the <a href="./LICENSE">MIT License</a>. Please go through the License atleast once before contributing. </p>
 
 <h1 align="center">
 Thank you everyone! 💚
 </h1>
 <br>
-
-<p align="center">
-A heartfelt thank you to those who have contributed to this project. We are really grateful towards your contribution. <br/> You all are amazing. Opensource for the win 🚀 </p>
-<br>
-
-<h1 align="center">
-License
-</h1>
-<br>
-
-<p align="center">
-Milan is Licensed under the <a href="./LICENSE">MIT License</a>. Please go through the License atleast once before contributing. </p>
-
-
