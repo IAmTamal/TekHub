@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import CommunityCard from "../components/CommunityCard";
+import ProjCommCard from "../components/ProjCommCard";
 import "../styles/Communities.css";
 
 const Communities = () => {
@@ -61,9 +61,9 @@ const Communities = () => {
                     <hr className="comm_hr" />
 
                     <div className="comm_carddiv">
-                        {communities.map((comms) => (
+                        {communities.map((data) => (
                             <div className="user">
-                                <CommunityCard comms={comms} />
+                                <ProjCommCard data={data} />
                             </div>
                         ))}
                     </div>

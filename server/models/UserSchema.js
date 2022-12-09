@@ -12,9 +12,16 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    username:{
-        type:String,
+    username: {
+        type: String,
     },
+    bio: {
+        type: String,
+    },
+    avatar: {
+        type: String,
+    },
+
     address: {
         type: String,
     },
@@ -30,10 +37,10 @@ const UserSchema = mongoose.Schema({
     pf_link: {
         type: String,
     },
-    tech_stack: [
+    tech: [
         String
     ],
-    
+
 
 });
 

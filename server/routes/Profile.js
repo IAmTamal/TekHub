@@ -68,7 +68,7 @@ router.put("/edit", async (req, res) => {
 
 
 // here we are adding tech stack to the user, techstack is basically an array of strings
-// we are pushing the strings to the array, with the help of $each we are able to append an array to the tech_stack array
+// we are pushing the strings to the array, with the help of $each we are able to append an array to the tech array
 router.put("/addtech", async (req, res) => {
     try {
         const data = req.body;
@@ -77,7 +77,7 @@ router.put("/addtech", async (req, res) => {
                 { _id: data.id },
                 {
                     $push: {
-                        "tech_stack": { $each: data.tech_stack }
+                        "tech": { $each: data.tech }
                     },
                 }
             );
@@ -98,7 +98,7 @@ router.put("/removetech", async (req, res) => {
                 { _id: data.id },
                 {
                     $pullAll: {
-                        "tech_stack": data.tech_stack
+                        "tech": data.tech
                     }
                 }
             );

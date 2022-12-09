@@ -1,18 +1,93 @@
+.pf_mainparent {
+  margin-top: 5rem;
+}
+
 .pf_subparent h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 3.5rem;
-  max-width: 70%;
+  /* max-width: 70%; */
   line-height: 70px;
   margin-bottom: 1.5rem !important;
   color: #a87ff3;
-  margin-top: 3rem;
+
+  /* border-bottom: solid rgba(255, 255, 255, 0.866);
+  width: fit-content;
+  padding-bottom: 5px; */
 }
 
 .pf_hr1 {
   background-color: white;
   color: white;
-  width: 50%;
   height: 1px;
   border: 1px solid white;
   opacity: 0.7;
+}
+
+.pf_headerdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.pf_headerdiv .textdiv {
+  width: 60%;
+}
+.pf_headerdiv .textdiv p {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+}
+
+.pf_headerdiv .imgdiv img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.pf_projdiv {
+  margin-top: 3rem;
+}
+
+.pf_projcomm_headerdiv p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  line-height: 70px;
+  color: #a87ff3;
+  margin: 0px !important;
+}
+
+.pf_projcomm_projectsdiv {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pf_techskills_headerdiv p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  line-height: 70px;
+  color: #a87ff3;
+}
+
+.pf_techskills_techdiv {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.pf_techskills_techs p {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  background-color: rgb(255, 255, 255);
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  margin-right: 1rem;
 }
