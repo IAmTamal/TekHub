@@ -75,4 +75,3 @@ Milan is Licensed under the <a href="./LICENSE">MIT License</a>. Please go throu
 <h1 align="center">
 Thank you everyone! 💚
 </h1>
-<br>
