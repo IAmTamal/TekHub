@@ -72,7 +72,7 @@ const Profile = () => {
                             </div>
 
                             <div className='biodiv'>
-                                <p>{user.bio} </p>
+                                <p>{user.bio || `Hello there i am ${user.name.split(" ")[0]}, i love tech, communities and collaborations. Glad to meet you all 🚀`}  </p>
 
                                 <div className="pf_socialdiv">
 

@@ -15,6 +15,26 @@ const Editprofile = () => {
     const [tech, settech] = useState([]);
     const navigate = useNavigate()
 
+
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                resolve(fileReader.result)
+            };
+            fileReader.onerror = (error) => {
+                reject(error)
+            }
+        })
+    }
+
+    const handleImage = async (e) => {
+        const base64 = await convertToBase64(e.target.files[0]);
+        // setImage({ ...image, avatar: base64 })
+        setuser({ ...user, [e.target.name]: base64 })
+    }
+
     const getuser = async () => {
         const response = await getUser();
         console.log(response.data);
@@ -86,19 +106,21 @@ const Editprofile = () => {
                             <div className="namediv">
                                 <input type="text" className="form-control ep_name_input" aria-describedby="Fullname" name='name' value={user.name} autoFocus onChange={handleuserchange} />
 
-                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                                <img src={user.avatar} alt="" />
 
                             </div>
 
-                            <textarea class="form-control ep_bio_input" placeholder="Leave a comment here" id="floatingTextarea" value={user.bio} name='bio' onChange={handleuserchange}></textarea>
+                            <textarea class="form-control ep_bio_input" id="floatingTextarea" value={user.bio || `Hello there i am ${user.name.split(" ")[0]}, i love tech, communities and collaborations. Glad to meet you all 🚀`} name='bio' onChange={handleuserchange}></textarea>
 
 
                         </div>
 
                         <div className="imgdiv">
-                            <div>
-                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
-                                <button className='pf_editbtn' onClick={handleSave}>Save changes</button>
+                            <div className='ep_div'>
+                                <img src={user.avatar} alt="" />
+                                <input class="form-control ep_image_input" type="file" id="formFile" accept="image/png, image/gif, image/jpeg" name="avatar" onChange={handleImage} />
+
+                                <button className='ep_savechanges_btn' onClick={handleSave}>Save changes</button>
                             </div>
                         </div>
                     </div>

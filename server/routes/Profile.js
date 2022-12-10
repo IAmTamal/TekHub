@@ -5,29 +5,21 @@ const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 var multer = require("multer");
 
-// here we are using multer to store the image in the public/images folder
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "public/images");
-    },
-    filename: function (req, file, cb) {
-        cb(null, Date.now() + "-" + file.originalname);
-    },
-});
-var upload = multer({ storage: storage });
+const checkAuth = (req, res) => {
+    const token = req.header("Authorization").replace("Bearer ", "");
+    if (!token) {
+        return res.status(401).json({ msg: "No token, authorization denied" });
+    }
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return decoded;
+}
 
 
 
 // getting the profile data of the user
 router.get("/", async (req, res) => {
     try {
-        const token = req.header("Authorization").replace("Bearer ", "");
-
-        if (!token) {
-            return res.status(401).json({ msg: "No token, authorization denied" });
-        }
-
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = checkAuth(req, res);
 
         const user = await User.findById(decoded.User.id);
 
@@ -43,15 +35,7 @@ router.get("/", async (req, res) => {
 // edit the profile data of the user
 router.put("/edit", async (req, res) => {
     try {
-
-        const token = req.header("Authorization").replace("Bearer ", "");
-
-
-        if (!token) {
-            return res.status(401).json({ msg: "No token, authorization denied" });
-        }
-
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const decoded = checkAuth(req, res);
         const data = req.body;
 
         const newuserdata = {}
@@ -64,6 +48,7 @@ router.put("/edit", async (req, res) => {
         if (data.tw_link) newuserdata.tw_link = data.tw_link;
         if (data.li_link) newuserdata.li_link = data.li_link;
         if (data.pf_link) newuserdata.pf_link = data.pf_link;
+        if (data.avatar) newuserdata.avatar = data.avatar;
 
 
         const user = await User.findOneAndUpdate(
@@ -84,36 +69,29 @@ router.put("/edit", async (req, res) => {
 
 // upload or change the profile picture of the user
 
-const checkAuth = (req, res) => {
-    const token = req.header("Authorization").replace("Bearer ", "");
-    if (!token) {
-        return res.status(401).json({ msg: "No token, authorization denied" });
-    }
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    return decoded;
-}
 
-router.post('/profilepic', async (req, res) => {
 
-    try {
+// router.post('/profilepic', async (req, res) => {
 
-        const decoded = checkAuth(req, res);
-        const newuserdata = {}
-        if (req.body.avatar !== null) newuserdata.avatar = req.body.avatar;
+//     try {
 
-        const user = await User.findOneAndUpdate(
-            { _id: decoded.User.id },
-            { $set: newuserdata },
-            { new: true }
-        );
+//         const decoded = checkAuth(req, res);
+//         const newuserdata = {}
+//         if (req.body.avatar !== null) newuserdata.avatar = req.body.avatar;
 
-        res.status(201).json({ msg: "Profile Picture Updated" });
-    } catch (err) {
-        console.error(err.message);
-        res.status(500).send("Server Error");
-    }
+//         const user = await User.findOneAndUpdate(
+//             { _id: decoded.User.id },
+//             { $set: newuserdata },
+//             { new: true }
+//         );
 
-})
+//         res.status(201).json({ msg: "Profile Picture Updated" });
+//     } catch (err) {
+//         console.error(err.message);
+//         res.status(500).send("Server Error");
+//     }
+
+// })
 
 
 // here we are adding tech stack to the user, techstack is basically an array of strings

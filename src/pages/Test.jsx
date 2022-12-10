@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { editprofilepic, getUser } from '../service/ProfileApi'
+import { editprofilepic, getUser, editUser } from '../service/ProfileApi'
 
 const Test = () => {
     const [image, setImage] = React.useState({ avatar: '' })
@@ -36,7 +36,7 @@ const Test = () => {
 
 
     const imageUpload = async () => {
-        const response = await editprofilepic(image)
+        const response = await editUser(image)
 
         if (response.status === 201) {
             getuser()
@@ -48,7 +48,7 @@ const Test = () => {
             <div class="mb-3 container">
                 <label for="formFile" class="form-label">Upload image</label>
                 <input class="form-control" type="file" id="formFile" accept="image/png, image/gif, image/jpeg" onChange={handleImage} name="avatar" />
-                <button className='btn btn-info mt-5' onClick={imageUpload}>Upload</button>
+                {/* <button className='btn btn-info mt-5' onClick={imageUpload}>Upload</button> */}
 
 
 
