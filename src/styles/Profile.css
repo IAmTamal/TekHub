@@ -38,6 +38,13 @@
   flex-direction: column;
 }
 
+.pf_socialicons {
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
 .pf_headerdiv .textdiv p {
   font-family: "Poppins", sans-serif;
   color: white;

@@ -57,7 +57,7 @@ router.put("/edit", async (req, res) => {
             { new: true }
         );
 
-        return res.status(201).json({ msg: "Profile Updated" });
+        return res.status(201).json({ message: "Profile Updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");
@@ -82,7 +82,7 @@ router.put("/addtech", async (req, res) => {
                     },
                 }
             );
-        res.status(201).json({ msg: "Tech Stack Updated" });
+        res.status(201).json({ message: "Tech/skills updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");

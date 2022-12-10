@@ -24,7 +24,7 @@ const Navbar = () => {
             autoClose: 700,
             hideProgressBar: false,
             closeOnClick: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             draggable: true,
             progress: undefined,
             closeButton: false,

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "../../styles/Profile.css"
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { addtech, getUser } from '../../service/ProfileApi'
 
 const ProfileTechSkills = ({ type }) => {
@@ -33,6 +35,7 @@ const ProfileTechSkills = ({ type }) => {
 
 
         if (response.status === 201) {
+
             settechinput('');
             settechs([])
             getuser();
@@ -43,7 +46,6 @@ const ProfileTechSkills = ({ type }) => {
 
     return (
         <>
-
             {user && <div className="pf_techskills_mainparent">
                 <div className="pf_techskills_subparent">
 

@@ -5,6 +5,10 @@ import Cookies from 'js-cookie'
 import ProfileProjComm from '../../components/profilecomponents/ProfileProjComm'
 import ProfileTechSkills from '../../components/profilecomponents/ProfileTechSkills'
 import { useNavigate } from 'react-router-dom'
+import { ReactComponent as Gh } from "../../assets/gh.svg"
+import { ReactComponent as Tw } from "../../assets/tw.svg"
+import { ReactComponent as Li } from "../../assets/li.svg"
+import { ReactComponent as Pf } from "../../assets/pf.svg"
 
 
 
@@ -75,6 +79,24 @@ const Profile = () => {
                                 <p>{user.bio || `Hello there i am ${user.name.split(" ")[0]}, i love tech, communities and collaborations. Glad to meet you all 🚀`}  </p>
 
                                 <div className="pf_socialdiv">
+                                    {user.gh_link && <a href={user.gh_link}>
+                                        <Gh className="pf_socialicons" style={{ borderRadius: "50%" }} />
+                                    </a>}
+
+                                    {user.tw_link && <a href={user.tw_link}>
+                                        <Tw className="pf_socialicons" style={{ borderRadius: "50%" }} />
+                                    </a>}
+
+                                    {user.li_link && <a href={user.li_link}>
+                                        <Li className="pf_socialicons" style={{ borderRadius: "50%" }} />
+                                    </a>}
+
+                                    {user.pf_link && <a href={user.pf_link}>
+                                        <Pf className="pf_socialicons" style={{ borderRadius: "50%" }} />
+                                    </a>}
+
+
+
 
                                 </div>
                             </div>

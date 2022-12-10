@@ -5,7 +5,8 @@ import Cookies from 'js-cookie'
 import ProfileProjComm from '../../components/profilecomponents/ProfileProjComm'
 import ProfileTechSkills from '../../components/profilecomponents/ProfileTechSkills'
 import { useNavigate } from 'react-router-dom'
-
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Editprofile = () => {
@@ -86,7 +87,21 @@ const Editprofile = () => {
         const response = await editUser(user);
 
         if (response.status === 201) {
-            alert("Profile updated successfully");
+
+
+            toast(response.data.message, {
+                position: 'top-right',
+                autoClose: 800,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: true,
+                progress: undefined,
+                closeButton: false,
+                onClose: () => {
+                    getuser();
+                },
+            });
         }
 
     }
@@ -95,8 +110,23 @@ const Editprofile = () => {
     return (
         <>
 
+
+
             {user !== undefined && <div className="container pf_mainparent">
                 <div className="pf_subparent">
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={800}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        closeButton={false}
+                        limit={1}
+                    />
 
 
                     {/* NAME AND DESCRIPTION */}
@@ -131,13 +161,13 @@ const Editprofile = () => {
 
                         <div className='ep_socials_inputdiv'>
 
-                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Github link" />
+                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Github link" name='gh_link' value={user.gh_link} />
 
-                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Twitter link" />
+                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Twitter link" name='tw_link' value={user.tw_link} />
 
-                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Linkedin link" />
+                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Linkedin link" name='li_link' value={user.li_link} />
 
-                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Portfolio link" />
+                            <input type="text" className="form-control ep_link_input" aria-describedby="Fullname" onChange={handleuserchange} placeholder="Portfolio link" name='pf_link' value={user.pf_link} />
 
                         </div>
                     </div>
