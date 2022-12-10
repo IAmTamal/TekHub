@@ -93,6 +93,31 @@
   margin-right: 1rem;
 }
 
+.pf_headerdiv .textdiv .namediv div {
+  display: flex;
+  flex-direction: row;
+  line-height: 70px;
+}
+
+.pf_headerdiv .imgdiv div {
+  display: flex;
+  flex-direction: column;
+}
+
+.pf_editbtn {
+  /* background-color: #d58af6; */
+  background: #a87ff3;
+  box-shadow: 0px 0px 50px -10px rgba(151, 71, 255, 0.08);
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 6px;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* //* MOBILE */
 
 @media screen and (max-width: 430px) {
@@ -157,4 +182,64 @@
     justify-content: center;
     width: 100%;
   }
+}
+
+/* //* EDIT PROFILE  */
+.ep_name_input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem !important;
+  color: #a87ff3 !important;
+  margin: 0px !important;
+  width: 90%;
+  margin-bottom: 1rem !important;
+}
+
+.ep_bio_input {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  /* line-height: 1.8; */
+  letter-spacing: 1px;
+  width: 90%;
+  min-height: 200px !important;
+  background: #28282b;
+}
+
+.ep_bio_input:focus {
+  background: #28282b;
+  color: white;
+  -webkit-box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+  -moz-box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+  box-shadow: 1px 1px 27px 6px rgba(168, 127, 243, 0.36) !important;
+}
+
+.ep_socials_div {
+  margin-top: 3rem;
+}
+.ep_socials_div p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.5rem;
+  line-height: 70px;
+  color: #a87ff3;
+}
+
+.ep_socials_inputdiv {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ep_socials_inputdiv input::placeholder {
+  color: rgba(255, 255, 255, 0.789);
+}
+
+.ep_socials_inputdiv input {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem !important;
+  /* line-height: 1.8; */
+  letter-spacing: 1px;
+  width: 40%;
+  background: #28282b;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
 }

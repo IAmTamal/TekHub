@@ -4,11 +4,14 @@ import { getUser } from '../../service/ProfileApi'
 import Cookies from 'js-cookie'
 import ProfileProjComm from '../../components/profilecomponents/ProfileProjComm'
 import ProfileTechSkills from '../../components/profilecomponents/ProfileTechSkills'
+import { useNavigate } from 'react-router-dom'
+
 
 
 const Profile = () => {
 
     const [user, setuser] = useState();
+    const navigate = useNavigate()
 
     const getuser = async () => {
         const response = await getUser();
@@ -51,9 +54,6 @@ const Profile = () => {
 
     ]);
 
-    const tech = ["Web development", "MERN Stack", "UI/UX", "ExpressJS", "NextJS", "ReactJS", "GraphQL"]
-
-
 
     return (
         <>
@@ -74,7 +74,10 @@ const Profile = () => {
                         </div>
 
                         <div className="imgdiv">
-                            <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                            <div>
+                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                                <button className='pf_editbtn' onClick={() => { navigate("/editprofile") }}>Edit profile</button>
+                            </div>
                         </div>
                     </div>
 

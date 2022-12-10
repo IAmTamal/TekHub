@@ -155,6 +155,10 @@ input:focus {
     display: none;
   }
 
+  .signup_form {
+    width: 100%;
+  }
+
   .signup_textdiv {
     margin: auto;
     width: 95%;
