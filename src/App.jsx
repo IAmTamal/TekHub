@@ -11,6 +11,7 @@ import Profile from './pages/profilepages/Profile'
 import Routeguard from './middleware/Routeguard'
 import Editprofile from './pages/profilepages/Editprofile'
 import TekState from './context/TekState'
+import Test from './pages/Test'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<LandingPage />} />
+            <Route exact path="/" element={<Test />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/communities" element={<Communities />} />
             <Route exact path="/signup" element={<Signup />} />
@@ -34,14 +35,9 @@ function App() {
               <Route exact path="/editprofile" element={<Editprofile />} />
 
             </Route>
-
-
           </Routes>
-
-
         </Router>
       </TekState>
-
 
 
     </>
@@ -49,9 +45,3 @@ function App() {
 }
 
 export default App
-
-
-
-//! PROFILE PAGE (Profile.jsx) = Profile stuffs + Edit stuffs(EditProfile.jsx)
-
-//! Profile stuffs = Profile page + Profile communities + Profile projects + Profile comments

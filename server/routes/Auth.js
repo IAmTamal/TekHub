@@ -23,6 +23,7 @@ router.post("/signup", async (req, res) => {
             email: data.email,
             password: hashpassword,
             username: data.email.split("@")[0] + Math.floor(Math.random() * 1000),
+            avatar: "https://i.ibb.co/LR39s6h/defaultprofilepic.png"
         });
 
 

@@ -15,7 +15,7 @@ const Profile = () => {
 
     const getuser = async () => {
         const response = await getUser();
-        console.log(response.data);
+        console.log(response.data.avatar);
         setuser(response.data);
     }
 
@@ -68,7 +68,7 @@ const Profile = () => {
 
                             <div className="namediv">
                                 <h1>{user.name}</h1>
-                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                                <img src={user.avatar} alt="" />
                             </div>
 
                             <div className='biodiv'>
@@ -83,7 +83,7 @@ const Profile = () => {
 
                         <div className="imgdiv">
                             <div>
-                                <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
+                                <img src={user.avatar} alt="" />
                                 <button className='pf_editbtn' onClick={() => { navigate("/editprofile") }}>Edit profile</button>
                             </div>
                         </div>

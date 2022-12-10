@@ -50,6 +50,7 @@
   width: 250px;
   height: 250px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .pf_projdiv {
@@ -152,6 +153,7 @@
     height: 100px;
     width: 100px;
     margin-right: 1rem;
+    object-fit: cover;
   }
 
   .pf_headerdiv .imgdiv img {

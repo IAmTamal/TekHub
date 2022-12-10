@@ -3,6 +3,19 @@ const User = require("../models/UserSchema");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
+var multer = require("multer");
+
+// here we are using multer to store the image in the public/images folder
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, "public/images");
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + "-" + file.originalname);
+    },
+});
+var upload = multer({ storage: storage });
+
 
 
 // getting the profile data of the user
@@ -66,6 +79,41 @@ router.put("/edit", async (req, res) => {
         res.status(500).send("Server Error");
     }
 });
+
+
+
+// upload or change the profile picture of the user
+
+const checkAuth = (req, res) => {
+    const token = req.header("Authorization").replace("Bearer ", "");
+    if (!token) {
+        return res.status(401).json({ msg: "No token, authorization denied" });
+    }
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return decoded;
+}
+
+router.post('/profilepic', async (req, res) => {
+
+    try {
+
+        const decoded = checkAuth(req, res);
+        const newuserdata = {}
+        if (req.body.avatar !== null) newuserdata.avatar = req.body.avatar;
+
+        const user = await User.findOneAndUpdate(
+            { _id: decoded.User.id },
+            { $set: newuserdata },
+            { new: true }
+        );
+
+        res.status(201).json({ msg: "Profile Picture Updated" });
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+
+})
 
 
 // here we are adding tech stack to the user, techstack is basically an array of strings
