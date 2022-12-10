@@ -28,6 +28,13 @@ const ProfileTechSkills = ({ type }) => {
 
     const handleAddtech = async (e) => {
         e.preventDefault();
+
+        if (techinput.trim() === '' || techinput.length < 2 || techinput === null || techinput === undefined || techinput === ' ') {
+            toast.error("Please enter valid tech");
+            settechinput('');
+            return;
+        }
+
         techs.push(techinput);
 
         settechs(techs);
