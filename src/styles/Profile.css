@@ -33,6 +33,11 @@
   display: none;
 }
 
+.pf_headerdiv .textdiv .biodiv {
+  display: flex;
+  flex-direction: column;
+}
+
 .pf_headerdiv .textdiv p {
   font-family: "Poppins", sans-serif;
   color: white;

@@ -33,6 +33,7 @@ router.put("/edit", async (req, res) => {
 
         const token = req.header("Authorization").replace("Bearer ", "");
 
+
         if (!token) {
             return res.status(401).json({ msg: "No token, authorization denied" });
         }
@@ -43,7 +44,6 @@ router.put("/edit", async (req, res) => {
         const newuserdata = {}
 
         if (data.name) newuserdata.name = data.name;
-        if (data.email) newuserdata.email = data.email;
         if (data.username) newuserdata.username = data.username;
         if (data.bio) newuserdata.bio = data.bio;
         if (data.address) newuserdata.address = data.address;

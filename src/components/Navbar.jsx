@@ -36,7 +36,7 @@ const Navbar = () => {
 
     const getuser = async () => {
         const response = await getUser();
-        localStorage.setItem('username', "/profile/" + response.data.username);
+        localStorage.setItem('username', "/" + response.data.username);
         setisusername(true);
 
     }

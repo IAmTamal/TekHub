@@ -30,7 +30,7 @@ function App() {
             <Route exact path="/login" element={<Login />} />
 
             <Route element={<Routeguard />}>
-              <Route exact path="/profile/:username" element={<Profile />} />
+              <Route exact path="/:username" element={<Profile />} />
               <Route exact path="/editprofile" element={<Editprofile />} />
 
             </Route>

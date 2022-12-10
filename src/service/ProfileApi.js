@@ -22,7 +22,11 @@ export const getUser = async () => {
 
 export const editUser = async (creds) => {
     try {
-        const response = await authAxios.put(`${API}/profile/edit`, creds);
+        const response = await Axios.put(`${API}/profile/edit`, creds, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
         return response;
 
     } catch (error) {

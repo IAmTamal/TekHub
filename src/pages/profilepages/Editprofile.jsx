@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "../../styles/Profile.css"
-import { getUser } from '../../service/ProfileApi'
+import { getUser, editUser } from '../../service/ProfileApi'
 import Cookies from 'js-cookie'
 import ProfileProjComm from '../../components/profilecomponents/ProfileProjComm'
 import ProfileTechSkills from '../../components/profilecomponents/ProfileTechSkills'
@@ -60,9 +60,15 @@ const Editprofile = () => {
         setuser({ ...user, [e.target.name]: e.target.value })
     }
 
-    const handleSave = (e) => {
+    const handleSave = async (e) => {
         e.preventDefault();
         console.log(user);
+        const response = await editUser(user);
+
+        if (response.status === 201) {
+            alert("Profile updated successfully");
+        }
+
     }
 
 

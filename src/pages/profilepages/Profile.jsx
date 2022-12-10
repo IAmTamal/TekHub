@@ -70,7 +70,15 @@ const Profile = () => {
                                 <h1>{user.name}</h1>
                                 <img src="https://i.ibb.co/THzBrFQ/Untitled-design-1.png" alt="" />
                             </div>
-                            <p>{user.bio} </p>
+
+                            <div className='biodiv'>
+                                <p>{user.bio} </p>
+
+                                <div className="pf_socialdiv">
+
+                                </div>
+                            </div>
+
                         </div>
 
                         <div className="imgdiv">
