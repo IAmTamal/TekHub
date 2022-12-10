@@ -11,7 +11,6 @@ import Profile from './pages/profilepages/Profile'
 import Routeguard from './middleware/Routeguard'
 import Editprofile from './pages/profilepages/Editprofile'
 import TekState from './context/TekState'
-import Test from './pages/Test'
 
 function App() {
 
@@ -24,7 +23,7 @@ function App() {
         <Router>
           <Navbar />
           <Routes>
-            <Route exact path="/" element={<Test />} />
+            <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/communities" element={<Communities />} />
             <Route exact path="/signup" element={<Signup />} />

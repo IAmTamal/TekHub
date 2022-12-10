@@ -33,9 +33,12 @@ export const editUser = async (creds) => {
         console.log(error)
     }
 }
-export const editprofilepic = async (creds) => {
+
+
+export const addtech = async (creds) => {
     try {
-        const response = await Axios.post(`${API}/profile/profilepic`, creds, {
+        console.log(creds)
+        const response = await Axios.put(`${API}/profile/addtech`, creds, {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`,
             },

@@ -82,7 +82,6 @@
 .pf_techskills_techdiv {
   margin-top: 1rem;
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
   width: 80%;
 }
@@ -271,4 +270,42 @@
   font-weight: 600;
   cursor: pointer;
   width: 70%;
+}
+
+.ep_tech_inputdiv {
+  position: relative;
+  margin-right: 1rem;
+}
+.ep_tech_input {
+  font-family: "Poppins", sans-serif;
+  color: white;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  line-height: 1.8;
+  background: #28282b;
+  height: 40px;
+}
+
+.ep_tech_input::placeholder {
+  color: rgba(255, 255, 255, 0.789);
+}
+
+.pf_techskills_techs p {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  background-color: rgb(255, 255, 255);
+  padding: 0 0.5rem;
+  border-radius: 5px;
+  margin-right: 1rem;
+}
+
+.ep_tech_addicon {
+  position: absolute;
+  width: 25px;
+  right: 7px;
+  top: 7.8px;
+  z-index: 100;
 }

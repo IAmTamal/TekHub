@@ -145,7 +145,7 @@ const Editprofile = () => {
 
                     {/* TECH STACK */}
                     <div className="pf_projdiv">
-                        <ProfileTechSkills tech={user.tech} />
+                        <ProfileTechSkills type="edit" />
                     </div>
 
 

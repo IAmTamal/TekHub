@@ -57,7 +57,6 @@ router.put("/edit", async (req, res) => {
             { new: true }
         );
 
-
         return res.status(201).json({ msg: "Profile Updated" });
     } catch (err) {
         console.error(err.message);
@@ -66,53 +65,20 @@ router.put("/edit", async (req, res) => {
 });
 
 
-
-// upload or change the profile picture of the user
-
-
-
-// router.post('/profilepic', async (req, res) => {
-
-//     try {
-
-//         const decoded = checkAuth(req, res);
-//         const newuserdata = {}
-//         if (req.body.avatar !== null) newuserdata.avatar = req.body.avatar;
-
-//         const user = await User.findOneAndUpdate(
-//             { _id: decoded.User.id },
-//             { $set: newuserdata },
-//             { new: true }
-//         );
-
-//         res.status(201).json({ msg: "Profile Picture Updated" });
-//     } catch (err) {
-//         console.error(err.message);
-//         res.status(500).send("Server Error");
-//     }
-
-// })
-
-
 // here we are adding tech stack to the user, techstack is basically an array of strings
 // we are pushing the strings to the array, with the help of $each we are able to append an array to the tech array
 router.put("/addtech", async (req, res) => {
     try {
-        const token = req.header("Authorization").replace("Bearer ", "");
 
-        if (!token) {
-            return res.status(401).json({ msg: "No token, authorization denied" });
-        }
-
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
+        const decoded = checkAuth(req, res);
         const data = req.body;
+
         const
             user = await User.findOneAndUpdate(
                 { _id: decoded.User.id },
                 {
                     $push: {
-                        "tech": { $each: data.tech }
+                        "tech": { $each: data }
                     },
                 }
             );
@@ -127,6 +93,7 @@ router.put("/addtech", async (req, res) => {
 // we are pulling all the strings from the array that we want to remove with the help of  $pullAll command
 router.put("/removetech", async (req, res) => {
     try {
+        const decoded = checkAuth(req, res);
         const data = req.body;
         const
             user = await User.findOneAndUpdate(
@@ -137,7 +104,7 @@ router.put("/removetech", async (req, res) => {
                     }
                 }
             );
-        res.json(user);
+        return res.status(201).json({ msg: "Tech Stack Updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");
