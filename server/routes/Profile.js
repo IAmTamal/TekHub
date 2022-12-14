@@ -1,5 +1,6 @@
 const express = require("express");
 const User = require("../models/UserSchema");
+const Project = require("../models/ProjCommSchema");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
@@ -112,6 +113,40 @@ router.put("/removetech", async (req, res) => {
 });
 
 
+router.post("/addproject", async (req, res) => {
+    try {
+        const decoded = checkAuth(req, res);
+        const data = req.body;
+        const ProjectData = Project({
+            name: data.name,
+            user_id: decoded.User.id,
+            desc: data.desc,
+            pic: data.pic,
+            gh_link: data.gh_link,
+            yt_link: data.yt_link,
+            pj_link: data.pj_link
+        });
+        await ProjectData.save()
+        return res.status(201).json({ message: "Project added sucessfully" })
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error, try again later" })
+    }
+
+})
+
+
+router.get("/getusersproject", async (req, res) => {
+    try {
+
+        const decoded = checkAuth(req, res);
+
+        const projects = await Project.find({ user_id: decoded.User.id });
+        return res.status(201).json(projects)
+
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error, try again later" })
+    }
+})
 
 
 module.exports = router;

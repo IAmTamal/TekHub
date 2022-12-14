@@ -181,7 +181,7 @@ const Editprofile = () => {
 
                     {/* PROJECTS AND COMMUNITIES */}
                     <div className="pf_projdiv">
-                        <ProfileProjComm communities={communities} />
+                        <ProfileProjComm communities={communities} type="edit" />
                     </div>
 
                 </div>

@@ -50,3 +50,29 @@ export const addtech = async (creds) => {
     }
 }
 
+export const addProject = async (creds) => {
+    try {
+        const response = await Axios.post(`${API}/profile/addproject`, creds, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
+        return response;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getUsersproject = async () => {
+    try {
+        const response = await Axios.get(`${API}/profile/getusersproject`, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}

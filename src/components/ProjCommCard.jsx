@@ -21,7 +21,9 @@ const ProjCommCard = ({ data, type }) => {
                         <div className="commcard_card_textdiv_socials">
 
                             {type === "project" ? <>
-                                <BsGithub className="card_socials card_socials_github" />
+                                <BsGithub className="card_socials card_socials_github" onClick={() => {
+                                    window.open(data.gh_link);
+                                }} />
                                 <BsYoutube className="card_socials card_socials_youtube" />
                             </> : <>
 
