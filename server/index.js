@@ -19,6 +19,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", require("./routes/Auth"));
 app.use("/profile", require("./routes/Profile"));
+app.use("/data", require("./routes/Data"));
 app.use('/public', express.static('public'))
 
 app.listen(port, () => console.log("API IS RUNNING 🚀"));

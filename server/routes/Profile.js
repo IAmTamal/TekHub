@@ -190,6 +190,22 @@ router.get("/getuserscomm", async (req, res) => {
 })
 
 
+router.delete("/delprojcomm", async (req, res) => {
+    try {
+        const decoded = checkAuth(req, res);
+        const data = req.body;
+        await Project.findByIdAndDelete(data.id)
+        return res.status(201).json({ message: "Deleted sucessfully" })
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error, try again later" })
+    }
+})
+
+
+
+
+
+
 module.exports = router;
 
 

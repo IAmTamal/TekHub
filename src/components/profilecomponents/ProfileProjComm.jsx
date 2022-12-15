@@ -1,36 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getUsersCommunity, getUsersproject } from '../../service/ProfileApi';
 import "../../styles/Profile.css"
 import ProjCommCard from '../ProjCommCard';
 import ProjCommModal from "../editprofilecomponents/ProjCommModal"
+import TekContext from '../../context/TekContext';
 
 
 const ProfileCommunities = ({ type }) => {
 
-    const [projects, setProjects] = useState([]);
-    const [communities, setCommunities] = useState([]);
-
-    const getProjects = async () => {
-        const projectresponse = await getUsersproject()
-
-        if (projectresponse.status === 201) {
-            setProjects(projectresponse.data)
-        }
-    }
-
-    const getCommunities = async () => {
-        const communityresponse = await getUsersCommunity()
-
-        if (communityresponse.status === 201) {
-            setCommunities(communityresponse.data)
-            console.log(communityresponse.data)
-        }
-    }
+    // get usestate from TekState
+    const { projects, setProjects, communities, setCommunities, getProjects, getCommunities, } = useContext(TekContext);
 
     useEffect(() => {
-
-
-
         getProjects();
         getCommunities();
 

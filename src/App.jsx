@@ -11,6 +11,7 @@ import Profile from './pages/profilepages/Profile'
 import Routeguard from './middleware/Routeguard'
 import Editprofile from './pages/profilepages/Editprofile'
 import TekState from './context/TekState'
+import Projects from './pages/Projects'
 
 function App() {
 
@@ -26,8 +27,10 @@ function App() {
             <Route exact path="/" element={<LandingPage />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/communities" element={<Communities />} />
+            <Route exact path="/projects" element={<Projects />} />
             <Route exact path="/signup" element={<Signup />} />
             <Route exact path="/login" element={<Login />} />
+
 
             <Route element={<Routeguard />}>
               <Route exact path="/:username" element={<Profile />} />

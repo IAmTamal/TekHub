@@ -1,17 +1,9 @@
-import react, { useEffect } from "react";
+import react, { useEffect, useState } from "react";
 import TekContext from "./TekContext";
 import Cookies from "js-cookie";
+import { getUsersCommunity, getUsersproject } from "../service/ProfileApi";
 
 const TekState = (props) => {
-    const [drawerOpen, setDrawerOpen] = react.useState(true);
-    const anchor = "left";
-    const [state, setState] = react.useState({
-        top: false,
-        left: false,
-        bottom: false,
-        right: false,
-    });
-
 
 
     const [user, setuser] = react.useState();
@@ -19,26 +11,36 @@ const TekState = (props) => {
     const [username, setusername] = react.useState("");
     const [profileroute, setprofileroute] = react.useState("/profile/default");
 
-    // useEffect(() => {
-    //     if (Cookies.get('token') !== undefined && Cookies.get('token') !== null && Cookies.get('token') !== "" && Cookies.get('token') !== "undefined" && Cookies.get('token') !== "null" && Cookies.get('token') !== " ") {
-    //         const username = user?.name.split(' ');
-    //         setprofileroute(`/profile/${username}`);
+    const [update, setupdate] = react.useState(false);
 
-    //     }
-    // }, [Cookies.get('token')]);
+    const [projects, setProjects] = useState([]);
+    const [communities, setCommunities] = useState([]);
+
+    const getProjects = async () => {
+        const projectresponse = await getUsersproject()
+
+        if (projectresponse.status === 201) {
+            setProjects(projectresponse.data)
+        }
+    }
+
+    const getCommunities = async () => {
+        const communityresponse = await getUsersCommunity()
+
+        if (communityresponse.status === 201) {
+            setCommunities(communityresponse.data)
+
+        }
+    }
 
 
-    // var profileroute = ""
 
     return (
         <TekContext.Provider
             value={{
-                drawerOpen,
-                setDrawerOpen,
-                anchor,
-                state,
-                setState,
-                user, setuser, profileroute, setprofileroute
+                user, setuser, profileroute, setprofileroute,
+                projects, setProjects,
+                communities, setCommunities, getProjects, getCommunities,
             }}
         >
             {props.children}

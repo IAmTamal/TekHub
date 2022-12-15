@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "../../styles/Profile.css"
 import { addProject, addUsersCommunity } from '../../service/ProfileApi';
+import TekContext from '../../context/TekContext';
 
 const ProjCommModal = ({ type }) => {
 
     // const [user, setuser] = useState();
     const [data, setdata] = useState({ name: "", desc: "", pic: "", gh_link: "", yt_link: "", pj_link: "", tw_link: "", dc_link: "" });
+    const { getProjects, getCommunities } = useContext(TekContext);
+
 
 
     const convertToBase64 = (file) => {
@@ -38,6 +41,7 @@ const ProjCommModal = ({ type }) => {
 
             if (response.status === 201) {
                 alert("Project added successfully");
+                getProjects();
                 setdata({ name: "", desc: "", pic: "", gh_link: "", yt_link: "", pj_link: "" })
             }
         }
@@ -47,6 +51,7 @@ const ProjCommModal = ({ type }) => {
 
             if (response.status === 201) {
                 alert("Community added successfully");
+                getCommunities();
                 setdata({ name: "", desc: "", pic: "", gh_link: "", yt_link: "", pj_link: "", tw_link: "", dc_link: "" })
             }
         }
