@@ -76,3 +76,32 @@ export const getUsersproject = async () => {
         console.log(error)
     }
 }
+
+
+export const addUsersCommunity = async (creds) => {
+    try {
+
+        const response = await Axios.post(`${API}/profile/addcommunity`, creds, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
+        return response;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getUsersCommunity = async () => {
+    try {
+        const response = await Axios.get(`${API}/profile/getuserscomm`, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}

@@ -4,15 +4,34 @@
   border-radius: 10px;
   margin-top: 2rem;
   margin-right: 2.5rem;
+  padding-bottom: 10px;
+  min-height: 380px;
+  max-height: 380px;
+}
+
+.commcard_card2 {
+  max-width: 15rem;
+  background: white;
+  border-radius: 10px;
+  margin-top: 2rem;
+  margin-right: 2.5rem;
+  padding-bottom: 10px;
+  min-height: 400px;
+  max-height: 400px;
 }
 .commcard_card_imgdiv {
   display: flex;
   justify-content: center;
+  background: #28282b;
 }
 .commcard_card_imgdiv img {
   max-width: 15rem;
-  border-radius: 20px !important;
-  padding: 10px;
+  /* border-radius: 20px !important;
+  padding: 5px; */
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  min-height: 152px;
+  max-height: 152px;
 }
 
 .commcard_card_textdiv {
@@ -28,9 +47,40 @@
   margin-top: 0.5rem;
 }
 
+.commcard_card_textdiv p {
+  max-height: 130px;
+  min-height: 130px;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+  max-width: 250px;
+  min-width: 250px;
+}
+
+.commcard_card_textdiv2 {
+  font-family: "Poppins", sans-serif;
+  color: rgba(0, 0, 0, 0.92);
+  padding: 0px 10px;
+}
+.commcard_card_textdiv2 h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+.commcard_card_textdiv2 p {
+  max-height: 150px;
+  min-height: 150px;
+  overflow-wrap: break-word;
+
+  word-break: break-word;
+  max-width: 250px;
+  min-width: 250px;
+}
+
 .card_socials {
   margin-right: 10px;
-  margin-bottom: 10px;
+
   cursor: pointer;
 }
 

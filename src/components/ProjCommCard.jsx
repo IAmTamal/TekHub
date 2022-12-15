@@ -6,25 +6,29 @@ const ProjCommCard = ({ data, type }) => {
     return (
         <>
             <div className="commcard_main_parent">
-                <div className="commcard_card">
+                <div className={type === "project" ? "commcard_card" : "commcard_card2"}>
 
 
                     <div className="commcard_card_imgdiv">
-                        <img src={data.img} alt="" />
+                        <img src={data.pic} alt="" />
                     </div>
 
 
-                    <div className="commcard_card_textdiv">
+                    <div className={type === "project" ? "commcard_card_textdiv" : "commcard_card_textdiv2"}>
                         <h3>{data.name}</h3>
-                        <p>{data.desc}</p>
+                        <p className="">{data.desc}</p>
+                        {/* 190 max */}
 
                         <div className="commcard_card_textdiv_socials">
 
                             {type === "project" ? <>
-                                <BsGithub className="card_socials card_socials_github" onClick={() => {
+                                {data.gh_link && <BsGithub className="card_socials card_socials_github" onClick={() => {
                                     window.open(data.gh_link);
-                                }} />
-                                <BsYoutube className="card_socials card_socials_youtube" />
+                                }} />}
+
+                                {data.yt_link && <BsYoutube className="card_socials card_socials_youtube" onClick={() => {
+                                    window.open(data.yt_link);
+                                }} />}
                             </> : <>
 
                                 <BsYoutube className="card_socials card_socials_youtube" />

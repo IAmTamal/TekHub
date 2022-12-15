@@ -118,6 +118,7 @@ router.post("/addproject", async (req, res) => {
         const decoded = checkAuth(req, res);
         const data = req.body;
         const ProjectData = Project({
+            type: "project",
             name: data.name,
             user_id: decoded.User.id,
             desc: data.desc,
@@ -140,8 +141,48 @@ router.get("/getusersproject", async (req, res) => {
 
         const decoded = checkAuth(req, res);
 
-        const projects = await Project.find({ user_id: decoded.User.id });
+        const projects = await Project.find({ user_id: decoded.User.id, type: "project" });
         return res.status(201).json(projects)
+
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error, try again later" })
+    }
+})
+
+
+router.post("/addcommunity", async (req, res) => {
+    try {
+
+        const decoded = checkAuth(req, res);
+
+        const data = req.body;
+        const CommData = Project({
+            type: "community",
+            name: data.name,
+            user_id: decoded.User.id,
+            desc: data.desc,
+            pic: data.pic,
+            gh_link: data.gh_link,
+            tw_link: data.tw_link,
+            yt_link: data.yt_link,
+            dc_link: data.dc_link,
+        });
+        await CommData.save()
+        return res.status(201).json({ message: "Project added sucessfully" })
+
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error, try again later" })
+    }
+})
+
+
+router.get("/getuserscomm", async (req, res) => {
+    try {
+
+        const decoded = checkAuth(req, res);
+
+        const communities = await Project.find({ user_id: decoded.User.id, type: "community" });
+        return res.status(201).json(communities)
 
     } catch (error) {
         res.status(500).json({ message: "Internal server error, try again later" })

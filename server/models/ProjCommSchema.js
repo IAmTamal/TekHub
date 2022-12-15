@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 
 const ProjCommSchema = mongoose.Schema({
+    type: {
+        type: String,
+    },
     name: {
         type: String,
     },
