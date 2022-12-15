@@ -11,6 +11,9 @@ const ProjCommSchema = mongoose.Schema({
     {
         type: String,
     },
+    user_name: {
+        type: String,
+    },
     desc: {
         type: String,
     },

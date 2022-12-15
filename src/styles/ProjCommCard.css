@@ -5,8 +5,8 @@
   margin-top: 2rem;
   margin-right: 2.5rem;
   padding-bottom: 10px;
-  min-height: 380px;
-  max-height: 380px;
+  min-height: 420px;
+  max-height: 420px;
 }
 
 .commcard_card2 {
@@ -47,7 +47,23 @@
   margin-top: 0.5rem;
 }
 
-.commcard_card_textdiv p {
+.commcard_usernamediv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.commcard_username {
+  margin: 0px;
+  color: #000000c9;
+}
+
+.commcard_userimg {
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+}
+
+.commcard_desc {
   max-height: 130px;
   min-height: 130px;
   overflow-wrap: break-word;

@@ -16,7 +16,14 @@ const ProjCommCard = ({ data, type }) => {
 
                     <div className={type === "project" ? "commcard_card_textdiv" : "commcard_card_textdiv2"}>
                         <h3>{data.name}</h3>
-                        <p className="">{data.desc}</p>
+
+                        {type === "project" && <div className="commcard_usernamediv">
+                            <img src="https://i.ibb.co/5BSd278/Userimg.png" className="commcard_userimg" alt="" />
+                            <p className="commcard_username">{data.user_name}</p>
+                        </div>}
+
+
+                        <p className="commcard_desc">{data.desc}</p>
                         {/* 190 max */}
 
                         <div className="commcard_card_textdiv_socials">

@@ -12,6 +12,7 @@ const Communities = () => {
 
         if (response.status === 201) {
             setCommunities(response.data)
+            console.log(response.data)
         }
     }
 

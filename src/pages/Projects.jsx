@@ -42,11 +42,6 @@ const Projects = () => {
 
                         </div>
 
-                        {/* <div className="comm_addbtndiv">
-                            <p>Communities to join !</p>
-                            <button className="btn btn-warning">Add your community</button>
-                        </div>
-                        <hr className="comm_hr" /> */}
 
                         <div className="comm_carddiv">
                             {projects.map((data) => (

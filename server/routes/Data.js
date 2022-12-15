@@ -20,7 +20,7 @@ router.get("/getallprojects", async (req, res) => {
 router.get("/getallcommunities", async (req, res) => {
     try {
 
-        const communities = await Project.find({ type: "communities" });
+        const communities = await Project.find({ type: "community" });
         return res.status(201).json(communities)
 
     } catch (error) {
