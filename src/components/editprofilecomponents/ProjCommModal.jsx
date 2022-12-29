@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react'
 import "../../styles/Profile.css"
 import { addProject, addUsersCommunity } from '../../service/ProfileApi';
 import TekContext from '../../context/TekContext';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ProjCommModal = ({ type }) => {
 
@@ -40,7 +42,16 @@ const ProjCommModal = ({ type }) => {
             const response = await addProject(data);
 
             if (response.status === 201) {
-                alert("Project added successfully");
+                toast(response.data.message, {
+                    position: 'top-right',
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    closeButton: false,
+                });
                 getProjects();
                 setdata({ name: "", desc: "", pic: "", gh_link: "", yt_link: "", pj_link: "" })
             }
@@ -50,7 +61,16 @@ const ProjCommModal = ({ type }) => {
             const response = await addUsersCommunity(data);
 
             if (response.status === 201) {
-                alert("Community added successfully");
+                toast(response.data.message, {
+                    position: 'top-right',
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    closeButton: false,
+                });
                 getCommunities();
                 setdata({ name: "", desc: "", pic: "", gh_link: "", yt_link: "", pj_link: "", tw_link: "", dc_link: "" })
             }
@@ -60,6 +80,20 @@ const ProjCommModal = ({ type }) => {
 
     return (
         <>
+
+            <ToastContainer
+                position="top-right"
+                autoClose={1000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                closeButton={false}
+                limit={1}
+            />
 
             <div className="modal-dialog modal-dialog-centered modal-lg">
                 <div className="modal-content">

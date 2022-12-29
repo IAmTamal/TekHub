@@ -21,6 +21,7 @@ const TekState = (props) => {
 
         if (projectresponse.status === 201) {
             setProjects(projectresponse.data)
+            console.log(projectresponse.data)
         }
     }
 

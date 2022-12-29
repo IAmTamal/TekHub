@@ -85,6 +85,24 @@ export const addProject = async (creds) => {
     }
 }
 
+export const deleteProjComm = async (id) => {
+
+
+    try {
+        const response = await Axios.delete(`${API}/profile/deleteprojcomm/${id}`, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            },
+        });
+
+        return response;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
 export const getUsersproject = async () => {
     try {
         const response = await Axios.get(`${API}/profile/getusersproject`, {

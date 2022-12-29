@@ -148,6 +148,9 @@ router.post("/addproject", async (req, res) => {
 })
 
 
+
+
+
 router.get("/getusersproject", async (req, res) => {
     try {
 
@@ -180,7 +183,7 @@ router.post("/addcommunity", async (req, res) => {
             dc_link: data.dc_link,
         });
         await CommData.save()
-        return res.status(201).json({ message: "Project added sucessfully" })
+        return res.status(201).json({ message: "Cpmmunity added sucessfully" })
 
     } catch (error) {
         res.status(500).json({ message: "Internal server error, try again later" })
@@ -202,16 +205,26 @@ router.get("/getuserscomm", async (req, res) => {
 })
 
 
-router.delete("/delprojcomm", async (req, res) => {
+
+router.delete("/deleteprojcomm/:id", async (req, res) => {
     try {
         const decoded = checkAuth(req, res);
-        const data = req.body;
-        await Project.findByIdAndDelete(data.id)
-        return res.status(201).json({ message: "Deleted sucessfully" })
+        const id = req.params.id;
+
+
+        const project = await Project.findOneAndDelete({ _id: id });
+
+        if (!project) {
+            return res.status(404).json({ message: "Project not found" })
+        }
+
+        return res.status(201).json({ message: "Project deleted sucessfully" })
+
     } catch (error) {
         res.status(500).json({ message: "Internal server error, try again later" })
     }
 })
+
 
 
 
