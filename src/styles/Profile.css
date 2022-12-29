@@ -98,17 +98,30 @@
   flex-wrap: wrap;
   width: 80%;
 }
+.pf_techskills_techs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 40px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 0 0.5rem;
+  background-color: rgb(255, 255, 255);
+}
 
 .pf_techskills_techs p {
   font-family: "Poppins", sans-serif;
   color: black;
   font-size: 1.2rem;
-  line-height: 1.8;
   letter-spacing: 1px;
-  background-color: rgb(255, 255, 255);
-  padding: 0 0.5rem;
-  border-radius: 5px;
-  margin-right: 1rem;
+  margin: 0 0 0 0 !important;
+}
+
+.pf_techskills_del {
+  max-width: 18px;
+  margin-left: 5px;
+  cursor: pointer;
 }
 
 .pf_headerdiv .textdiv .namediv div {

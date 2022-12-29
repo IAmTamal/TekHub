@@ -1,7 +1,5 @@
 import Axios from "axios";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Cookies from "js-cookie";
+
 
 const API = import.meta.env.VITE_SERVER_API;
 

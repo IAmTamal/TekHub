@@ -90,22 +90,23 @@ router.put("/addtech", async (req, res) => {
     }
 });
 
-// here we are removing tech stack from the user, techstack is basically an array of strings
-// we are pulling all the strings from the array that we want to remove with the help of  $pullAll command
-router.put("/removetech", async (req, res) => {
+// get a word from the user and delete it from the tech array
+
+router.put("/deletetech", async (req, res) => {
     try {
+
         const decoded = checkAuth(req, res);
         const data = req.body;
-        const
-            user = await User.findOneAndUpdate(
-                { _id: data.id },
-                {
-                    $pullAll: {
-                        "tech": data.tech
-                    }
-                }
-            );
-        return res.status(201).json({ msg: "Tech Stack Updated" });
+
+        const user = await User.findOneAndUpdate(
+            { _id: decoded.User.id },
+            {
+                $pull: {
+                    "tech": data[0]
+                },
+            }
+        );
+        return res.status(201).json({ message: "Tech/skills updated" });
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");
@@ -113,10 +114,12 @@ router.put("/removetech", async (req, res) => {
 });
 
 
+
 router.post("/addproject", async (req, res) => {
     try {
         const decoded = checkAuth(req, res);
         const data = req.body;
+
 
         const user = await User.findById(decoded.User.id);
 

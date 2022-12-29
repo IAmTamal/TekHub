@@ -37,13 +37,34 @@ export const editUser = async (creds) => {
 
 export const addtech = async (creds) => {
     try {
+
         console.log(creds)
+
         const response = await Axios.put(`${API}/profile/addtech`, creds, {
             headers: {
                 Authorization: `Bearer ${Cookies.get("token")}`,
             },
         });
         return response;
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deletetech = async (creds) => {
+    try {
+
+        console.log(creds)
+
+        const response = await Axios.put(`${API}/profile/deletetech`, creds, {
+            headers: {
+                Authorization: `Bearer ${Cookies.get("token")}`,
+            }
+        });
+
+        return response;
+
 
     } catch (error) {
         console.log(error)
