@@ -5,10 +5,10 @@ import Cookies from 'js-cookie'
 import ProfileProjComm from '../../components/profilecomponents/ProfileProjComm'
 import ProfileTechSkills from '../../components/profilecomponents/ProfileTechSkills'
 import { useNavigate } from 'react-router-dom'
-import { ReactComponent as Gh } from "../../assets/gh.svg"
-import { ReactComponent as Tw } from "../../assets/tw.svg"
-import { ReactComponent as Li } from "../../assets/li.svg"
-import { ReactComponent as Pf } from "../../assets/pf.svg"
+import { ReactComponent as Gh } from "../../assets/socials/gh.svg"
+import { ReactComponent as Tw } from "../../assets/socials/tw.svg"
+import { ReactComponent as Li } from "../../assets/socials/li.svg"
+import { ReactComponent as Pf } from "../../assets/socials/pf.svg"
 
 
 
